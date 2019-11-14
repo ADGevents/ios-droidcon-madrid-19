@@ -8,12 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		3B488D4E23709FCA005D0D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D4D23709FCA005D0D54 /* AppDelegate.swift */; };
-		3B488D5023709FCA005D0D54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D4F23709FCA005D0D54 /* ViewController.swift */; };
+		3B488D5023709FCA005D0D54 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D4F23709FCA005D0D54 /* ScheduleViewController.swift */; };
 		3B488D5323709FCA005D0D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5123709FCA005D0D54 /* Main.storyboard */; };
 		3B488D5523709FCC005D0D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5423709FCC005D0D54 /* Assets.xcassets */; };
 		3B488D5823709FCC005D0D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5623709FCC005D0D54 /* LaunchScreen.storyboard */; };
 		3B488D6323709FCC005D0D54 /* droidconmadrid19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D6223709FCC005D0D54 /* droidconmadrid19Tests.swift */; };
 		3B488D6E23709FCC005D0D54 /* droidconmadrid19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */; };
+		3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */; };
+		3B488D862370D1E7005D0D54 /* SessionDtoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D852370D1E7005D0D54 /* SessionDtoModels.swift */; };
+		3B488D892370D54F005D0D54 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D882370D54F005D0D54 /* Either.swift */; };
+		3B488D8B2370D5A3005D0D54 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D8A2370D5A3005D0D54 /* ApiError.swift */; };
+		3B488D8D2370D754005D0D54 /* GetSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D8C2370D754005D0D54 /* GetSessions.swift */; };
+		3B488D902370D866005D0D54 /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D8F2370D866005D0D54 /* UITableViewCell+Utils.swift */; };
+		3B488D922370D895005D0D54 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D912370D895005D0D54 /* UIView+Utils.swift */; };
+		3B488D962370D963005D0D54 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D942370D963005D0D54 /* SessionCell.swift */; };
+		3B488D992370DFC7005D0D54 /* SessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D982370DFC7005D0D54 /* SessionsViewModel.swift */; };
+		3B488D9B2370E2C0005D0D54 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D9A2370E2C0005D0D54 /* SessionModel.swift */; };
+		3B488D9D2370E666005D0D54 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D9C2370E666005D0D54 /* ServiceLocator.swift */; };
+		3BBF33EF237D5A950064C563 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33EE237D5A950064C563 /* FontStyle.swift */; };
+		3BBF33F1237D5ACF0064C563 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33F0237D5ACF0064C563 /* FontSize.swift */; };
+		3BBF33F3237D5B250064C563 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33F2237D5B250064C563 /* Fonts.swift */; };
+		3BBF33F5237D64120064C563 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33F4237D64120064C563 /* Colors.swift */; };
+		3BBF33FB237D8AFA0064C563 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33FA237D8AFA0064C563 /* HomeViewController.swift */; };
+		3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33FE237DBE490064C563 /* FavouritesViewController.swift */; };
+		3BBF3404237DC2B40064C563 /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3403237DC2B40064C563 /* SpeakersViewController.swift */; };
+		3BBF3407237DC32D0064C563 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3406237DC32D0064C563 /* InfoViewController.swift */; };
+		5DE100D4751DFA5937E4B5A8 /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDBFA19517D78459CDEB841 /* Pods_droidconmadrid19.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CDBFA19517D78459CDEB841 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B488D4A23709FCA005D0D54 /* droidconmadrid19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = droidconmadrid19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B488D4D23709FCA005D0D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B488D4F23709FCA005D0D54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B488D4F23709FCA005D0D54 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		3B488D5223709FCA005D0D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B488D5423709FCC005D0D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B488D5723709FCC005D0D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +68,27 @@
 		3B488D6923709FCC005D0D54 /* droidconmadrid19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = droidconmadrid19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = droidconmadrid19UITests.swift; sourceTree = "<group>"; };
 		3B488D6F23709FCC005D0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeApiClient.swift; sourceTree = "<group>"; };
+		3B488D852370D1E7005D0D54 /* SessionDtoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDtoModels.swift; sourceTree = "<group>"; };
+		3B488D882370D54F005D0D54 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		3B488D8A2370D5A3005D0D54 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		3B488D8C2370D754005D0D54 /* GetSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessions.swift; sourceTree = "<group>"; };
+		3B488D8F2370D866005D0D54 /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
+		3B488D912370D895005D0D54 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		3B488D942370D963005D0D54 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
+		3B488D982370DFC7005D0D54 /* SessionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewModel.swift; sourceTree = "<group>"; };
+		3B488D9A2370E2C0005D0D54 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		3B488D9C2370E666005D0D54 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		3BBF33EE237D5A950064C563 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
+		3BBF33F0237D5ACF0064C563 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
+		3BBF33F2237D5B250064C563 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3BBF33F4237D64120064C563 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3BBF33FA237D8AFA0064C563 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3BBF33FE237DBE490064C563 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		3BBF3403237DC2B40064C563 /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
+		3BBF3406237DC32D0064C563 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		954771CC6915BA829EDA4AC4 /* Pods-droidconmadrid19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19.debug.xcconfig"; sourceTree = "<group>"; };
+		ABF40556A590F9FB9772AD98 /* Pods-droidconmadrid19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE100D4751DFA5937E4B5A8 /* Pods_droidconmadrid19.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +117,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D00C02D8AE07EADB10FC457 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				954771CC6915BA829EDA4AC4 /* Pods-droidconmadrid19.debug.xcconfig */,
+				ABF40556A590F9FB9772AD98 /* Pods-droidconmadrid19.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3B488D4123709FCA005D0D54 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +133,8 @@
 				3B488D6123709FCC005D0D54 /* droidconmadrid19Tests */,
 				3B488D6C23709FCC005D0D54 /* droidconmadrid19UITests */,
 				3B488D4B23709FCA005D0D54 /* Products */,
+				2D00C02D8AE07EADB10FC457 /* Pods */,
+				7AE76B6A6CC72F154854A98D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +151,17 @@
 		3B488D4C23709FCA005D0D54 /* droidconmadrid19 */ = {
 			isa = PBXGroup;
 			children = (
+				3BBF3401237DC21B0064C563 /* info */,
+				3BBF3400237DC1DE0064C563 /* speakers */,
+				3BBF33FC237DBE2E0064C563 /* favourites */,
+				3B488D872370D53A005D0D54 /* core */,
+				3B488D7B2370A1CE005D0D54 /* schedule */,
 				3B488D4D23709FCA005D0D54 /* AppDelegate.swift */,
-				3B488D4F23709FCA005D0D54 /* ViewController.swift */,
 				3B488D5123709FCA005D0D54 /* Main.storyboard */,
 				3B488D5423709FCC005D0D54 /* Assets.xcassets */,
 				3B488D5623709FCC005D0D54 /* LaunchScreen.storyboard */,
 				3B488D5923709FCC005D0D54 /* Info.plist */,
+				3BBF33FA237D8AFA0064C563 /* HomeViewController.swift */,
 			);
 			path = droidconmadrid19;
 			sourceTree = "<group>";
@@ -125,6 +184,132 @@
 			path = droidconmadrid19UITests;
 			sourceTree = "<group>";
 		};
+		3B488D7B2370A1CE005D0D54 /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D932370D93A005D0D54 /* presentation */,
+				3B488D7D2370A20D005D0D54 /* domain */,
+				3B488D7C2370A1E7005D0D54 /* data */,
+			);
+			path = schedule;
+			sourceTree = "<group>";
+		};
+		3B488D7C2370A1E7005D0D54 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D7E2370A34E005D0D54 /* network */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		3B488D7D2370A20D005D0D54 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D8C2370D754005D0D54 /* GetSessions.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		3B488D7E2370A34E005D0D54 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */,
+				3B488D852370D1E7005D0D54 /* SessionDtoModels.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		3B488D872370D53A005D0D54 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D8E2370D850005D0D54 /* ui */,
+				3B488D882370D54F005D0D54 /* Either.swift */,
+				3B488D8A2370D5A3005D0D54 /* ApiError.swift */,
+				3B488D9C2370E666005D0D54 /* ServiceLocator.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		3B488D8E2370D850005D0D54 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D8F2370D866005D0D54 /* UITableViewCell+Utils.swift */,
+				3B488D912370D895005D0D54 /* UIView+Utils.swift */,
+				3BBF33EE237D5A950064C563 /* FontStyle.swift */,
+				3BBF33F0237D5ACF0064C563 /* FontSize.swift */,
+				3BBF33F2237D5B250064C563 /* Fonts.swift */,
+				3BBF33F4237D64120064C563 /* Colors.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		3B488D932370D93A005D0D54 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D4F23709FCA005D0D54 /* ScheduleViewController.swift */,
+				3B488D942370D963005D0D54 /* SessionCell.swift */,
+				3B488D982370DFC7005D0D54 /* SessionsViewModel.swift */,
+				3B488D9A2370E2C0005D0D54 /* SessionModel.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		3BBF33FC237DBE2E0064C563 /* favourites */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF33FD237DBE370064C563 /* presentation */,
+			);
+			path = favourites;
+			sourceTree = "<group>";
+		};
+		3BBF33FD237DBE370064C563 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF33FE237DBE490064C563 /* FavouritesViewController.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		3BBF3400237DC1DE0064C563 /* speakers */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF3402237DC2500064C563 /* presentation */,
+			);
+			path = speakers;
+			sourceTree = "<group>";
+		};
+		3BBF3401237DC21B0064C563 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF3405237DC30F0064C563 /* presentation */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		3BBF3402237DC2500064C563 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF3403237DC2B40064C563 /* SpeakersViewController.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		3BBF3405237DC30F0064C563 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF3406237DC32D0064C563 /* InfoViewController.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		7AE76B6A6CC72F154854A98D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CDBFA19517D78459CDEB841 /* Pods_droidconmadrid19.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +317,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B488D7223709FCC005D0D54 /* Build configuration list for PBXNativeTarget "droidconmadrid19" */;
 			buildPhases = (
+				BBD90DDBA95B401E52C784C0 /* [CP] Check Pods Manifest.lock */,
 				3B488D4623709FCA005D0D54 /* Sources */,
 				3B488D4723709FCA005D0D54 /* Frameworks */,
 				3B488D4823709FCA005D0D54 /* Resources */,
+				3B488D812370A885005D0D54 /* ShellScript */,
+				321685EE7BC59620C9E516D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +439,94 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		321685EE7BC59620C9E516D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B488D812370A885005D0D54 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		BBD90DDBA95B401E52C784C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-droidconmadrid19-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B488D4623709FCA005D0D54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B488D5023709FCA005D0D54 /* ViewController.swift in Sources */,
+				3BBF33F3237D5B250064C563 /* Fonts.swift in Sources */,
+				3B488D862370D1E7005D0D54 /* SessionDtoModels.swift in Sources */,
+				3BBF33F1237D5ACF0064C563 /* FontSize.swift in Sources */,
+				3BBF33F5237D64120064C563 /* Colors.swift in Sources */,
+				3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */,
+				3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */,
+				3BBF33FB237D8AFA0064C563 /* HomeViewController.swift in Sources */,
+				3B488D9B2370E2C0005D0D54 /* SessionModel.swift in Sources */,
+				3BBF3404237DC2B40064C563 /* SpeakersViewController.swift in Sources */,
+				3B488D5023709FCA005D0D54 /* ScheduleViewController.swift in Sources */,
+				3BBF3407237DC32D0064C563 /* InfoViewController.swift in Sources */,
+				3B488D9D2370E666005D0D54 /* ServiceLocator.swift in Sources */,
+				3B488D902370D866005D0D54 /* UITableViewCell+Utils.swift in Sources */,
+				3BBF33EF237D5A950064C563 /* FontStyle.swift in Sources */,
+				3B488D8D2370D754005D0D54 /* GetSessions.swift in Sources */,
 				3B488D4E23709FCA005D0D54 /* AppDelegate.swift in Sources */,
+				3B488D962370D963005D0D54 /* SessionCell.swift in Sources */,
+				3B488D992370DFC7005D0D54 /* SessionsViewModel.swift in Sources */,
+				3B488D892370D54F005D0D54 /* Either.swift in Sources */,
+				3B488D922370D895005D0D54 /* UIView+Utils.swift in Sources */,
+				3B488D8B2370D5A3005D0D54 /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,10 +699,15 @@
 		};
 		3B488D7323709FCC005D0D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 954771CC6915BA829EDA4AC4 /* Pods-droidconmadrid19.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSHVJWDX75;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = droidconmadrid19/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,10 +722,15 @@
 		};
 		3B488D7423709FCC005D0D54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABF40556A590F9FB9772AD98 /* Pods-droidconmadrid19.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSHVJWDX75;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = droidconmadrid19/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
