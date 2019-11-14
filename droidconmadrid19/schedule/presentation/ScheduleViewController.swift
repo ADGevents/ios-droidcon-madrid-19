@@ -10,8 +10,17 @@ import UIKit
 
 class ScheduleViewController: UIViewController {
 
+	private lazy var headerView: UIView = {
+		let headerView = UIView()
+        headerView.backgroundColor = .white
+		return headerView
+	}()
+
 	private lazy var sessions: UITableView = {
 		let tableView = UITableView()
+		tableView.delegate = self
+		tableView.dataSource = self
+		SessionCell.register(on: tableView)
 		return tableView
 	}()
 
@@ -20,7 +29,7 @@ class ScheduleViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpTitle()
-		setUpSessionsTableView()
+		setUpScheduleTableView()
 		bindViewModel()
 	}
 
@@ -51,22 +60,18 @@ extension ScheduleViewController: UITableViewDataSource {
 }
 
 private extension ScheduleViewController {
-	func setUpSessionsTableView() {
-		self.view.addSubview(sessions)
-		sessions.delegate = self
-		sessions.dataSource = self
-		registerCells()
-	}
-
-	private func registerCells() {
-		SessionCell.register(on: sessions)
+	func setUpScheduleTableView() {
+		self.view.addSubview(sessions, constraints: [
+			self.view.bottomAnchor.constraint(equalTo: sessions.bottomAnchor),
+			self.view.leadingAnchor.constraint(equalTo: sessions.leadingAnchor),
+			self.view.trailingAnchor.constraint(equalTo: sessions.trailingAnchor),
+			self.headerView.bottomAnchor.constraint(equalTo: sessions.topAnchor)
+		])
 	}
 }
 
 private extension ScheduleViewController {
 	func setUpTitle() {
-		let headerView = UIView()
-        headerView.backgroundColor = .white
         self.view.addSubview(headerView)
 
 		let titleLabel = UILabel()
