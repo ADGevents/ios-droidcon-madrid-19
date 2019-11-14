@@ -25,20 +25,18 @@ extension SessionizeApiClient {
 		}
 
 		URLSession.shared.dataTask(with: getSessionsUrl) { (data, response, error) in
-			DispatchQueue.main.async {
 				guard let jsonData = data else {
-					completion(Either.left(.generic))
+					DispatchQueue.main.async { completion(Either.left(.generic)) }
 					return
 				}
 
 				let sessionGroups = try? self.decoder.decode([SessionGroup].self, from: jsonData)
 
 				if let sessionGroups = sessionGroups {
-					completion(Either.right(sessionGroups))
+					DispatchQueue.main.async { completion(Either.right(sessionGroups)) }
 				} else {
-					completion(Either.left(.generic))
+					DispatchQueue.main.async { completion(Either.left(.generic)) }
 				}
-			}
 			}.resume()
 	}
 }
