@@ -28,4 +28,10 @@ extension UIView {
 		}
 		return view
 	}
+
+	func addSubview(_ subview: UIView, constraints: [NSLayoutConstraint]) {
+		subview.translatesAutoresizingMaskIntoConstraints = false
+		addSubview(subview)
+		NSLayoutConstraint.activate(constraints)
+	}
 }

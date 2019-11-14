@@ -29,9 +29,7 @@ class SessionsViewController: UIViewController {
 }
 
 extension SessionsViewController: UITableViewDelegate {
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 80
-	}
+	
 }
 
 // MARK: UITableViewDataSource
@@ -60,7 +58,7 @@ private extension SessionsViewController {
 	}
 
 	private func registerCells() {
-		SessionCell.registerNib(on: sessions)
+		SessionCell.register(on: sessions)
 	}
 }
 

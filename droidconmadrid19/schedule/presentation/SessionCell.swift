@@ -9,31 +9,87 @@
 import UIKit
 
 class SessionCell: UITableViewCell {
-	@IBOutlet weak var time: UILabel!
-	@IBOutlet weak var timePeriod: UILabel!
-	@IBOutlet weak var title: UILabel!
-	@IBOutlet weak var additionalInfo: UILabel!
-	@IBOutlet weak var category: UILabel!
 
-	override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+	private lazy var timeView: UILabel = {
+		let label = UILabel(frame: .zero)
+		label.textAlignment = .center
+		return label
+	}()
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+	private lazy var timePeriodView: UILabel = {
+		let label = UILabel(frame: .zero)
+		label.textAlignment = .center
+		return label
+	}()
 
-        // Configure the view for the selected state
-    }
+	private lazy var sessionTitleView: UILabel = {
+		let label = UILabel(frame: .zero)
+		label.font = UIFont.title
+		label.textColor = Colors.textPrimary
+		return label
+	}()
+
+	private lazy var sessionDescriptionView: UILabel = {
+		let label = UILabel(frame: .zero)
+		label.font = UIFont.sub1
+		label.textColor = Colors.textPrimary
+		return label
+	}()
+
+	private lazy var sessionCategoryLabel: UILabel = {
+		let label = UILabel(frame: .zero)
+		label.font = UIFont.caption1
+		label.textColor = Colors.textSeconday
+		return label
+	}()
+
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		commonInit()
+	}
+
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		commonInit()
+	}
+}
+
+extension SessionCell {
+	func commonInit() {
+		let timeTextStackView = UIStackView(arrangedSubviews: [timeView, timePeriodView])
+		timeTextStackView.distribution = .fill
+		timeTextStackView.axis = .vertical
+		timeTextStackView.spacing = 0
+
+		let sessionInfoStackView = UIStackView(arrangedSubviews: [sessionTitleView,
+																  sessionDescriptionView,
+																  sessionCategoryLabel])
+		sessionInfoStackView.distribution = .fill
+		sessionInfoStackView.axis = .vertical
+		sessionInfoStackView.spacing = 4
+
+		let sessionCellStackView = UIStackView(arrangedSubviews: [timeTextStackView,
+																  sessionInfoStackView])
+		sessionCellStackView.distribution = .fill
+		sessionCellStackView.axis = .horizontal
+		sessionCellStackView.spacing = 16
+		addSubview(sessionCellStackView, constraints: [
+				self.topAnchor.constraint(equalTo: sessionCellStackView.topAnchor, constant: -8),
+				self.bottomAnchor.constraint(equalTo: sessionCellStackView.bottomAnchor, constant: 8),
+				self.leadingAnchor.constraint(equalTo: sessionCellStackView.leadingAnchor, constant: -16),
+				self.trailingAnchor.constraint(equalTo: sessionCellStackView.trailingAnchor, constant: 16)
+			])
+
+	}
 }
 
 extension SessionCell {
 
 	func bind(_ session: SessionModel) {
-		title.text = session.title
-		additionalInfo.text = session.description
-		time.text = session.time
-		timePeriod.text = session.timePeriod
-		category.text = session.category
+		timeView.text = session.time
+		timePeriodView.text = session.timePeriod
+		sessionTitleView.text = session.title
+		sessionDescriptionView.text = session.description
+		sessionCategoryLabel.text = session.category
 	}
 }
