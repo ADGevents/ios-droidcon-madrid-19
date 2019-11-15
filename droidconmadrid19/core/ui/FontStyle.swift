@@ -27,17 +27,17 @@ public enum FontStyle: Int {
 	case caption2
 	case caption3
 	case caption4
-
+	
 	func preferredFont(constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
 		let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
 		var preferredSize = self.preferredSize
-
+		
 		if let constrainedSize = constrainedPreferredSize, preferredSize.isGreaterThan(constrainedSize) {
 			preferredSize = constrainedSize
 		}
-
+		
 		let points = fontSize.points(prerredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
-
+		
 		return UIFont.systemFont(ofSize: points, weight: weight)
 	}
 }
@@ -46,7 +46,7 @@ private extension FontStyle {
 	var preferredSize: UIContentSizeCategory {
 		return UIScreen.main.traitCollection.preferredContentSizeCategory
 	}
-
+	
 	var fontSize: FontSize {
 		switch self {
 		case .display3:
@@ -54,31 +54,31 @@ private extension FontStyle {
 		case .display:
 			return .huge
 		case .headline1,
-		     .headline2,
-		     .headline3:
+			 .headline2,
+			 .headline3:
 			return .large
 		case .title,
-		     .title1:
+			 .title1:
 			return .big
 		case .title2,
-		     .title3:
+			 .title3:
 			return .veryBig
 		case .body1,
-		     .body2,
-		     .body3:
+			 .body2,
+			 .body3:
 			return .medium
 		case .sub1,
-		     .sub2:
+			 .sub2:
 			return .small
 		case .caption1,
-		     .caption2,
-		     .caption3:
+			 .caption2,
+			 .caption3:
 			return .verySmall
 		case .caption4:
 			return .extraSmall
 		}
 	}
-
+	
 	var weight: UIFont.Weight {
 		switch self {
 		case .display3:
@@ -129,7 +129,7 @@ public extension UIContentSizeCategory {
 			return weight > other.weight
 		}
 	}
-
+	
 	private var weight: Int {
 		switch self {
 		case .extraSmall:

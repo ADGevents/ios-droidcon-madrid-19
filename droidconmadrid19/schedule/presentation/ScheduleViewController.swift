@@ -9,13 +9,13 @@
 import UIKit
 
 class ScheduleViewController: UIViewController {
-
+	
 	private lazy var headerView: UIView = {
 		let headerView = UIView()
-        headerView.backgroundColor = .white
+		headerView.backgroundColor = .white
 		return headerView
 	}()
-
+	
 	private lazy var sessions: UITableView = {
 		let tableView = UITableView()
 		tableView.delegate = self
@@ -23,16 +23,16 @@ class ScheduleViewController: UIViewController {
 		SessionCell.register(on: tableView)
 		return tableView
 	}()
-
+	
 	private let sessionsViewModel = ServiceLocator.sessionsViewModel()
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpTitle()
 		setUpScheduleTableView()
 		bindViewModel()
 	}
-
+	
 	override func viewWillDisappear(_ animated: Bool) {
 		unbindViewModel()
 		super.viewWillDisappear(animated)
@@ -44,17 +44,17 @@ extension ScheduleViewController: UITableViewDelegate {
 }
 
 extension ScheduleViewController: UITableViewDataSource {
-
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return sessionsViewModel.sessionsModel.count
 	}
-
+	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let sessionCell = SessionCell.dequeueReusableCell(for: indexPath, from: sessions)
-
+		
 		let session = sessionsViewModel.sessionsModel[indexPath.row]
 		sessionCell.bind(session)
-
+		
 		return sessionCell
 	}
 }
@@ -72,26 +72,26 @@ private extension ScheduleViewController {
 
 private extension ScheduleViewController {
 	func setUpTitle() {
-        self.view.addSubview(headerView)
-
+		self.view.addSubview(headerView)
+		
 		let titleLabel = UILabel()
-        titleLabel.text = "Schedule"
-        titleLabel.textAlignment = .center
-        titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 20)
-        headerView.addSubview(titleLabel)
-
+		titleLabel.text = "Schedule"
+		titleLabel.textAlignment = .center
+		titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 20)
+		headerView.addSubview(titleLabel)
+		
 		// Set position of views using constraints
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        headerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
-        headerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
-
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
-        titleLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 0.4).isActive = true
-        titleLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.5).isActive = true
+		headerView.translatesAutoresizingMaskIntoConstraints = false
+		headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+		headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+		headerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
+		headerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
+		
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
+		titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+		titleLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 0.4).isActive = true
+		titleLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.5).isActive = true
 	}
 }
 
@@ -100,10 +100,11 @@ private extension ScheduleViewController {
 		sessionsViewModel.sessionsUpdatedCallback = sessions.reloadData
 		sessionsViewModel.onSessionsVisible()
 	}
-
+	
 	func unbindViewModel() {
 		sessionsViewModel.sessionsUpdatedCallback = {}
 		sessionsViewModel.onSessionsGone()
 	}
 }
+
 

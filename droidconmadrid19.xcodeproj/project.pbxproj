@@ -12,10 +12,9 @@
 		3B488D5323709FCA005D0D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5123709FCA005D0D54 /* Main.storyboard */; };
 		3B488D5523709FCC005D0D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5423709FCC005D0D54 /* Assets.xcassets */; };
 		3B488D5823709FCC005D0D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5623709FCC005D0D54 /* LaunchScreen.storyboard */; };
-		3B488D6323709FCC005D0D54 /* droidconmadrid19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D6223709FCC005D0D54 /* droidconmadrid19Tests.swift */; };
 		3B488D6E23709FCC005D0D54 /* droidconmadrid19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */; };
 		3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */; };
-		3B488D862370D1E7005D0D54 /* SessionDtoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D852370D1E7005D0D54 /* SessionDtoModels.swift */; };
+		3B488D862370D1E7005D0D54 /* SessionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D852370D1E7005D0D54 /* SessionModels.swift */; };
 		3B488D892370D54F005D0D54 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D882370D54F005D0D54 /* Either.swift */; };
 		3B488D8B2370D5A3005D0D54 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D8A2370D5A3005D0D54 /* ApiError.swift */; };
 		3B488D8D2370D754005D0D54 /* GetSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D8C2370D754005D0D54 /* GetSessions.swift */; };
@@ -33,7 +32,20 @@
 		3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33FE237DBE490064C563 /* FavouritesViewController.swift */; };
 		3BBF3404237DC2B40064C563 /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3403237DC2B40064C563 /* SpeakersViewController.swift */; };
 		3BBF3407237DC32D0064C563 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3406237DC32D0064C563 /* InfoViewController.swift */; };
-		5DE100D4751DFA5937E4B5A8 /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDBFA19517D78459CDEB841 /* Pods_droidconmadrid19.framework */; };
+		3BBF3409237E0C140064C563 /* SpeakerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3408237E0C140064C563 /* SpeakerModels.swift */; };
+		3BBF340D237E115D0064C563 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF340C237E115D0064C563 /* URLSessionDataTaskMock.swift */; };
+		3BBF340F237E11FA0064C563 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF340E237E11FA0064C563 /* URLSessionMock.swift */; };
+		3BBF3412237E12800064C563 /* SessionizeApiClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3411237E12800064C563 /* SessionizeApiClientTest.swift */; };
+		3BBF341F237EAFA20064C563 /* DispatchingQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF341E237EAFA20064C563 /* DispatchingQueues.swift */; };
+		3BBF3422237EB16C0064C563 /* DispatchingQueuesStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3421237EB16C0064C563 /* DispatchingQueuesStubs.swift */; };
+		3BBF3425237EB31B0064C563 /* GetSessionsValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF3424237EB31B0064C563 /* GetSessionsValidResponse.json */; };
+		3BBF3427237EB37B0064C563 /* GetSessionsStubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3426237EB37B0064C563 /* GetSessionsStubResponse.swift */; };
+		3BBF3429237EB8020064C563 /* GetSessionsInvalidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF3428237EB8020064C563 /* GetSessionsInvalidResponse.json */; };
+		3BBF342D237EBAC70064C563 /* GetSpeakersValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF342C237EBAC70064C563 /* GetSpeakersValidResponse.json */; };
+		3BBF3431237EBAEC0064C563 /* GetSpeakersInvalidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF3430237EBAEC0064C563 /* GetSpeakersInvalidResponse.json */; };
+		3BBF3433237EBB0B0064C563 /* GetSpeakersStubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */; };
+		63455215F100037000F3F3A6 /* Pods_droidconmadrid19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */; };
+		CB49DACD06E389D1E3F97A5B /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1CDBFA19517D78459CDEB841 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EF9AA99E0C9A5E69A5FF481 /* Pods-droidconmadrid19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19.release.xcconfig"; sourceTree = "<group>"; };
 		3B488D4A23709FCA005D0D54 /* droidconmadrid19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = droidconmadrid19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B488D4D23709FCA005D0D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B488D4F23709FCA005D0D54 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -63,13 +75,12 @@
 		3B488D5723709FCC005D0D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B488D5923709FCC005D0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B488D5E23709FCC005D0D54 /* droidconmadrid19Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = droidconmadrid19Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B488D6223709FCC005D0D54 /* droidconmadrid19Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = droidconmadrid19Tests.swift; sourceTree = "<group>"; };
 		3B488D6423709FCC005D0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B488D6923709FCC005D0D54 /* droidconmadrid19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = droidconmadrid19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = droidconmadrid19UITests.swift; sourceTree = "<group>"; };
 		3B488D6F23709FCC005D0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeApiClient.swift; sourceTree = "<group>"; };
-		3B488D852370D1E7005D0D54 /* SessionDtoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDtoModels.swift; sourceTree = "<group>"; };
+		3B488D852370D1E7005D0D54 /* SessionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModels.swift; sourceTree = "<group>"; };
 		3B488D882370D54F005D0D54 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		3B488D8A2370D5A3005D0D54 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		3B488D8C2370D754005D0D54 /* GetSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessions.swift; sourceTree = "<group>"; };
@@ -87,8 +98,23 @@
 		3BBF33FE237DBE490064C563 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		3BBF3403237DC2B40064C563 /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
 		3BBF3406237DC32D0064C563 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		954771CC6915BA829EDA4AC4 /* Pods-droidconmadrid19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19.debug.xcconfig"; sourceTree = "<group>"; };
-		ABF40556A590F9FB9772AD98 /* Pods-droidconmadrid19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19.release.xcconfig"; sourceTree = "<group>"; };
+		3BBF3408237E0C140064C563 /* SpeakerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModels.swift; sourceTree = "<group>"; };
+		3BBF340C237E115D0064C563 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
+		3BBF340E237E11FA0064C563 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		3BBF3411237E12800064C563 /* SessionizeApiClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeApiClientTest.swift; sourceTree = "<group>"; };
+		3BBF341E237EAFA20064C563 /* DispatchingQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchingQueues.swift; sourceTree = "<group>"; };
+		3BBF3421237EB16C0064C563 /* DispatchingQueuesStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchingQueuesStubs.swift; sourceTree = "<group>"; };
+		3BBF3424237EB31B0064C563 /* GetSessionsValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSessionsValidResponse.json; sourceTree = "<group>"; };
+		3BBF3426237EB37B0064C563 /* GetSessionsStubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionsStubResponse.swift; sourceTree = "<group>"; };
+		3BBF3428237EB8020064C563 /* GetSessionsInvalidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSessionsInvalidResponse.json; sourceTree = "<group>"; };
+		3BBF342C237EBAC70064C563 /* GetSpeakersValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSpeakersValidResponse.json; sourceTree = "<group>"; };
+		3BBF3430237EBAEC0064C563 /* GetSpeakersInvalidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSpeakersInvalidResponse.json; sourceTree = "<group>"; };
+		3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeakersStubResponse.swift; sourceTree = "<group>"; };
+		71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98426E3061BEC3173568B7A /* Pods-droidconmadrid19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DE100D4751DFA5937E4B5A8 /* Pods_droidconmadrid19.framework in Frameworks */,
+				CB49DACD06E389D1E3F97A5B /* Pods_droidconmadrid19.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63455215F100037000F3F3A6 /* Pods_droidconmadrid19Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,11 +144,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D00C02D8AE07EADB10FC457 /* Pods */ = {
+		02D379B225D8F8B31620E765 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				954771CC6915BA829EDA4AC4 /* Pods-droidconmadrid19.debug.xcconfig */,
-				ABF40556A590F9FB9772AD98 /* Pods-droidconmadrid19.release.xcconfig */,
+				E98426E3061BEC3173568B7A /* Pods-droidconmadrid19.debug.xcconfig */,
+				0EF9AA99E0C9A5E69A5FF481 /* Pods-droidconmadrid19.release.xcconfig */,
+				A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */,
+				857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -133,8 +162,8 @@
 				3B488D6123709FCC005D0D54 /* droidconmadrid19Tests */,
 				3B488D6C23709FCC005D0D54 /* droidconmadrid19UITests */,
 				3B488D4B23709FCA005D0D54 /* Products */,
-				2D00C02D8AE07EADB10FC457 /* Pods */,
-				7AE76B6A6CC72F154854A98D /* Frameworks */,
+				02D379B225D8F8B31620E765 /* Pods */,
+				8E0BCCDB98EC216F139F2807 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,7 +198,7 @@
 		3B488D6123709FCC005D0D54 /* droidconmadrid19Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3B488D6223709FCC005D0D54 /* droidconmadrid19Tests.swift */,
+				3BBF340A237E10410064C563 /* core */,
 				3B488D6423709FCC005D0D54 /* Info.plist */,
 			);
 			path = droidconmadrid19Tests;
@@ -197,7 +226,6 @@
 		3B488D7C2370A1E7005D0D54 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				3B488D7E2370A34E005D0D54 /* network */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -214,7 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */,
-				3B488D852370D1E7005D0D54 /* SessionDtoModels.swift */,
+				3B488D852370D1E7005D0D54 /* SessionModels.swift */,
+				3BBF3408237E0C140064C563 /* SpeakerModels.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -222,6 +251,8 @@
 		3B488D872370D53A005D0D54 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				3BBF341D237EAF920064C563 /* dispatch */,
+				3B488D7E2370A34E005D0D54 /* network */,
 				3B488D8E2370D850005D0D54 /* ui */,
 				3B488D882370D54F005D0D54 /* Either.swift */,
 				3B488D8A2370D5A3005D0D54 /* ApiError.swift */,
@@ -302,10 +333,68 @@
 			path = presentation;
 			sourceTree = "<group>";
 		};
-		7AE76B6A6CC72F154854A98D /* Frameworks */ = {
+		3BBF340A237E10410064C563 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				1CDBFA19517D78459CDEB841 /* Pods_droidconmadrid19.framework */,
+				3BBF3420237EB15E0064C563 /* dispatch */,
+				3BBF340B237E10480064C563 /* network */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		3BBF340B237E10480064C563 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF3423237EB2FB0064C563 /* responses */,
+				3BBF3410237E126E0064C563 /* mock */,
+				3BBF3411237E12800064C563 /* SessionizeApiClientTest.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		3BBF3410237E126E0064C563 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF340C237E115D0064C563 /* URLSessionDataTaskMock.swift */,
+				3BBF340E237E11FA0064C563 /* URLSessionMock.swift */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
+		3BBF341D237EAF920064C563 /* dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF341E237EAFA20064C563 /* DispatchingQueues.swift */,
+			);
+			path = dispatch;
+			sourceTree = "<group>";
+		};
+		3BBF3420237EB15E0064C563 /* dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF3421237EB16C0064C563 /* DispatchingQueuesStubs.swift */,
+			);
+			path = dispatch;
+			sourceTree = "<group>";
+		};
+		3BBF3423237EB2FB0064C563 /* responses */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF3424237EB31B0064C563 /* GetSessionsValidResponse.json */,
+				3BBF3426237EB37B0064C563 /* GetSessionsStubResponse.swift */,
+				3BBF3428237EB8020064C563 /* GetSessionsInvalidResponse.json */,
+				3BBF342C237EBAC70064C563 /* GetSpeakersValidResponse.json */,
+				3BBF3430237EBAEC0064C563 /* GetSpeakersInvalidResponse.json */,
+				3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */,
+			);
+			path = responses;
+			sourceTree = "<group>";
+		};
+		8E0BCCDB98EC216F139F2807 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */,
+				C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,12 +406,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B488D7223709FCC005D0D54 /* Build configuration list for PBXNativeTarget "droidconmadrid19" */;
 			buildPhases = (
-				BBD90DDBA95B401E52C784C0 /* [CP] Check Pods Manifest.lock */,
+				252C29D08A3A5BDA97E5B0C3 /* [CP] Check Pods Manifest.lock */,
 				3B488D4623709FCA005D0D54 /* Sources */,
 				3B488D4723709FCA005D0D54 /* Frameworks */,
 				3B488D4823709FCA005D0D54 /* Resources */,
 				3B488D812370A885005D0D54 /* ShellScript */,
-				321685EE7BC59620C9E516D0 /* [CP] Embed Pods Frameworks */,
+				60B952EC630CB816D0BDDE46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,6 +426,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B488D7523709FCC005D0D54 /* Build configuration list for PBXNativeTarget "droidconmadrid19Tests" */;
 			buildPhases = (
+				541967C80AEC6C1562702E57 /* [CP] Check Pods Manifest.lock */,
 				3B488D5A23709FCC005D0D54 /* Sources */,
 				3B488D5B23709FCC005D0D54 /* Frameworks */,
 				3B488D5C23709FCC005D0D54 /* Resources */,
@@ -427,6 +517,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBF3429237EB8020064C563 /* GetSessionsInvalidResponse.json in Resources */,
+				3BBF342D237EBAC70064C563 /* GetSpeakersValidResponse.json in Resources */,
+				3BBF3425237EB31B0064C563 /* GetSessionsValidResponse.json in Resources */,
+				3BBF3431237EBAEC0064C563 /* GetSpeakersInvalidResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,48 +534,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		321685EE7BC59620C9E516D0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3B488D812370A885005D0D54 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		BBD90DDBA95B401E52C784C0 /* [CP] Check Pods Manifest.lock */ = {
+		252C29D08A3A5BDA97E5B0C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -499,6 +552,63 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3B488D812370A885005D0D54 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		541967C80AEC6C1562702E57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-droidconmadrid19Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60B952EC630CB816D0BDDE46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -507,8 +617,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BBF33F3237D5B250064C563 /* Fonts.swift in Sources */,
-				3B488D862370D1E7005D0D54 /* SessionDtoModels.swift in Sources */,
+				3BBF341F237EAFA20064C563 /* DispatchingQueues.swift in Sources */,
+				3B488D862370D1E7005D0D54 /* SessionModels.swift in Sources */,
 				3BBF33F1237D5ACF0064C563 /* FontSize.swift in Sources */,
+				3BBF3409237E0C140064C563 /* SpeakerModels.swift in Sources */,
 				3BBF33F5237D64120064C563 /* Colors.swift in Sources */,
 				3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */,
 				3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */,
@@ -534,7 +646,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B488D6323709FCC005D0D54 /* droidconmadrid19Tests.swift in Sources */,
+				3BBF3422237EB16C0064C563 /* DispatchingQueuesStubs.swift in Sources */,
+				3BBF340F237E11FA0064C563 /* URLSessionMock.swift in Sources */,
+				3BBF3412237E12800064C563 /* SessionizeApiClientTest.swift in Sources */,
+				3BBF340D237E115D0064C563 /* URLSessionDataTaskMock.swift in Sources */,
+				3BBF3433237EBB0B0064C563 /* GetSpeakersStubResponse.swift in Sources */,
+				3BBF3427237EB37B0064C563 /* GetSessionsStubResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,7 +816,7 @@
 		};
 		3B488D7323709FCC005D0D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954771CC6915BA829EDA4AC4 /* Pods-droidconmadrid19.debug.xcconfig */;
+			baseConfigurationReference = E98426E3061BEC3173568B7A /* Pods-droidconmadrid19.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -722,7 +839,7 @@
 		};
 		3B488D7423709FCC005D0D54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABF40556A590F9FB9772AD98 /* Pods-droidconmadrid19.release.xcconfig */;
+			baseConfigurationReference = 0EF9AA99E0C9A5E69A5FF481 /* Pods-droidconmadrid19.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -745,11 +862,13 @@
 		};
 		3B488D7623709FCC005D0D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSHVJWDX75;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/InstantMock/Sources/**";
 				INFOPLIST_FILE = droidconmadrid19Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -766,11 +885,13 @@
 		};
 		3B488D7723709FCC005D0D54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSHVJWDX75;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/InstantMock/Sources/**";
 				INFOPLIST_FILE = droidconmadrid19Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

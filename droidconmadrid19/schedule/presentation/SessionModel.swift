@@ -14,7 +14,7 @@ struct SessionModel {
 	let category: String
 	let time: String
 	let timePeriod: String
-
+	
 	init(title: String,
 		 description: String,
 		 category: String,

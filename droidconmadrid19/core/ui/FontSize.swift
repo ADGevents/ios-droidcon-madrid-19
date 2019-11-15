@@ -18,16 +18,16 @@ public enum FontSize {
 	case small
 	case verySmall
 	case extraSmall
-
+	
 	func points(prerredContentSize: UIContentSizeCategory, horizontalSizeClass: UIUserInterfaceSizeClass?) -> CGFloat {
 		var size = baseSize
-
+		
 		let preferredContentSizeDelta = FontSize.deltaPoints(preferredSize: prerredContentSize)
 		let sizeClassDelta = deltaPoints(horizontalSizeClass: horizontalSizeClass)
-
+		
 		size += preferredContentSizeDelta
 		size += sizeClassDelta
-
+		
 		return size
 	}
 }
@@ -55,7 +55,7 @@ private extension FontSize {
 			return 10
 		}
 	}
-
+	
 	static func deltaPoints(preferredSize: UIContentSizeCategory) -> CGFloat {
 		switch preferredSize {
 		case .extraSmall:
@@ -87,24 +87,24 @@ private extension FontSize {
 			return 0
 		}
 	}
-
+	
 	/// Returns the additional points taking into account the `horizontalSizeClass`
 	/// This currently makes the font size a bit larger for some sizes on regular horizontal size classes
 	func deltaPoints(horizontalSizeClass: UIUserInterfaceSizeClass?) -> CGFloat {
 		let horizontalSizeClass = horizontalSizeClass ?? .compact
 		guard horizontalSizeClass == .regular else { return 0 }
-
+		
 		switch self {
 		case .veryHuge,
-		     .huge,
-		     .large,
-		     .veryBig:
+			 .huge,
+			 .large,
+			 .veryBig:
 			return 0
 		case .big,
-		     .medium,
-		     .small,
-		     .verySmall,
-		     .extraSmall:
+			 .medium,
+			 .small,
+			 .verySmall,
+			 .extraSmall:
 			return 2
 		}
 	}
