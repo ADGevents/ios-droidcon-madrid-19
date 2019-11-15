@@ -10,5 +10,5 @@ import Foundation
 @testable import droidconmadrid19
 
 extension SyncQueue {
-    static let stubbedMain: SyncQueue = SyncQueue(queue: DispatchQueue(label: "stubbed-main-queue"))
+	static let stubbedMain: SyncQueue = SyncQueue(queue: DispatchQueue(label: "stubbed-main-queue"))
 }

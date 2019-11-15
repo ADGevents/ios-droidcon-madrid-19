@@ -13,15 +13,15 @@ class GetSpeakersStubResponse {
 		let bundle = Bundle(for: GetSpeakersStubResponse.self)
 		let stubResponsePath = bundle.path(forResource: "GetSpeakersValidResponse", ofType: "json")!
 		let jsonData = try! Data(contentsOf: URL(fileURLWithPath: stubResponsePath))
-
+		
 		return jsonData
 	}
-
+	
 	static var invalidData: Data {
 		let bundle = Bundle(for: GetSpeakersStubResponse.self)
 		let stubResponsePath = bundle.path(forResource: "GetSpeakersInvalidResponse", ofType: "json")!
 		let jsonData = try! Data(contentsOf: URL(fileURLWithPath: stubResponsePath))
-
+		
 		return jsonData
 	}
 }

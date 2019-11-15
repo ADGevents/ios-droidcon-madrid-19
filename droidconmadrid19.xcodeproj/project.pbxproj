@@ -12,7 +12,6 @@
 		3B488D5323709FCA005D0D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5123709FCA005D0D54 /* Main.storyboard */; };
 		3B488D5523709FCC005D0D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5423709FCC005D0D54 /* Assets.xcassets */; };
 		3B488D5823709FCC005D0D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5623709FCC005D0D54 /* LaunchScreen.storyboard */; };
-		3B488D6323709FCC005D0D54 /* droidconmadrid19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D6223709FCC005D0D54 /* droidconmadrid19Tests.swift */; };
 		3B488D6E23709FCC005D0D54 /* droidconmadrid19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */; };
 		3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */; };
 		3B488D862370D1E7005D0D54 /* SessionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D852370D1E7005D0D54 /* SessionModels.swift */; };
@@ -76,7 +75,6 @@
 		3B488D5723709FCC005D0D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B488D5923709FCC005D0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B488D5E23709FCC005D0D54 /* droidconmadrid19Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = droidconmadrid19Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B488D6223709FCC005D0D54 /* droidconmadrid19Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = droidconmadrid19Tests.swift; sourceTree = "<group>"; };
 		3B488D6423709FCC005D0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B488D6923709FCC005D0D54 /* droidconmadrid19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = droidconmadrid19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = droidconmadrid19UITests.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				3BBF340A237E10410064C563 /* core */,
-				3B488D6223709FCC005D0D54 /* droidconmadrid19Tests.swift */,
 				3B488D6423709FCC005D0D54 /* Info.plist */,
 			);
 			path = droidconmadrid19Tests;
@@ -655,7 +652,6 @@
 				3BBF340D237E115D0064C563 /* URLSessionDataTaskMock.swift in Sources */,
 				3BBF3433237EBB0B0064C563 /* GetSpeakersStubResponse.swift in Sources */,
 				3BBF3427237EB37B0064C563 /* GetSessionsStubResponse.swift in Sources */,
-				3B488D6323709FCC005D0D54 /* droidconmadrid19Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

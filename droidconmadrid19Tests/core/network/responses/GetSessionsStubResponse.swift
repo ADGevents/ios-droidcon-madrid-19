@@ -13,15 +13,15 @@ class GetSessionsStubResponse {
 		let bundle = Bundle(for: GetSessionsStubResponse.self)
 		let stubResponsePath = bundle.path(forResource: "GetSessionsValidResponse", ofType: "json")!
 		let jsonData = try! Data(contentsOf: URL(fileURLWithPath: stubResponsePath))
-
+		
 		return jsonData
 	}
-
+	
 	static var invalidData: Data {
 		let bundle = Bundle(for: GetSessionsStubResponse.self)
 		let stubResponsePath = bundle.path(forResource: "GetSessionsInvalidResponse", ofType: "json")!
 		let jsonData = try! Data(contentsOf: URL(fileURLWithPath: stubResponsePath))
-
+		
 		return jsonData
 	}
 }

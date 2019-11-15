@@ -9,16 +9,16 @@
 import Foundation
 
 class GetSessions {
-
+	
 	private let sessionizeApiClient: SessionizeApiClient
-
+	
 	init(sessionizeApiClient: SessionizeApiClient) {
 		self.sessionizeApiClient = sessionizeApiClient
 	}
 }
 
 extension GetSessions {
-
+	
 	func invoke(completion: @escaping (Either<ApiError, [SessionGroup]>) -> Void) {
 		sessionizeApiClient.getSessions(completion: completion)
 	}
