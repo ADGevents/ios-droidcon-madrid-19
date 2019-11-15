@@ -13,14 +13,12 @@ class SessionizeApiClientTest: XCTestCase {
 	
 	private let decoder = JSONDecoder()
 	private let urlSessionMock = URLSessionMock()
-	private let stubbedDispatching = SyncQueue.stubbedMain
 	
 	private var sut: SessionizeApiClient!
 	
 	override func setUp() {
 		sut = SessionizeApiClient(decoder: decoder,
-								  urlSession: urlSessionMock,
-								  mainDispatching: stubbedDispatching)
+								  urlSession: urlSessionMock)
 	}
 }
 

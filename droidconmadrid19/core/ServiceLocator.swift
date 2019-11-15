@@ -10,7 +10,8 @@ import Foundation
 
 class ServiceLocator {
 	static func sessionsViewModel() -> SessionsViewModel {
-		return SessionsViewModel(getSessions: getSessions())
+		return SessionsViewModel(getSessions: getSessions(),
+								 mainDispatching: AsyncQueue.main)
 	}
 
 	private static func getSessions() -> GetSessions {

@@ -13,14 +13,11 @@ class SessionizeApiClient {
 
 	private let decoder: JSONDecoder
 	private let urlSession: URLSession
-	private let mainDispatching: Dispatching
 
 	init(decoder: JSONDecoder,
-		 urlSession: URLSession,
-		 mainDispatching: Dispatching = AsyncQueue.main) {
+		 urlSession: URLSession) {
 		self.decoder = decoder
 		self.urlSession = urlSession
-		self.mainDispatching = mainDispatching
 	}
 }
 
@@ -33,16 +30,16 @@ extension SessionizeApiClient {
 
 		urlSession.dataTask(with: getSessionsUrl) { (data, response, error) in
 			guard let jsonData = data else {
-				self.mainDispatching.dispatch { completion(Either.left(.generic)) }
+				completion(Either.left(.generic))
 				return
 			}
 
 			let sessionGroups = try? self.decoder.decode([SessionGroup].self, from: jsonData)
 
 			if let sessionGroups = sessionGroups {
-				self.mainDispatching.dispatch { completion(Either.right(sessionGroups)) }
+				completion(Either.right(sessionGroups))
 			} else {
-				self.mainDispatching.dispatch { completion(Either.left(.generic)) }
+				completion(Either.left(.generic))
 			}
 		}.resume()
 	}
@@ -54,16 +51,16 @@ extension SessionizeApiClient {
 
 		urlSession.dataTask(with: getSpeakersUrl) { (data, response, error) in
 			guard let jsonData = data else {
-				self.mainDispatching.dispatch { completion(Either.left(.generic)) }
+				completion(Either.left(.generic))
 				return
 			}
 
 			let speakers = try? self.decoder.decode([Speaker].self, from: jsonData)
 
 			if let speakers = speakers {
-				self.mainDispatching.dispatch { completion(Either.right(speakers)) }
+				completion(Either.right(speakers))
 			} else {
-				self.mainDispatching.dispatch { completion(Either.left(.generic)) }
+				completion(Either.left(.generic))
 			}
 		}.resume()
 	}

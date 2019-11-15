@@ -9,18 +9,23 @@
 import Foundation
 
 class SessionsViewModel {
-
+	
 	var sessionsModel: [SessionModel] = [] {
 		didSet {
-			sessionsUpdatedCallback()
+			mainDispatching.dispatch { [weak self] in
+				self?.sessionsUpdatedCallback()
+			}
 		}
 	}
 	var sessionsUpdatedCallback: () -> Void = {}
-
+	
 	private let getSessions: GetSessions
-
-	init(getSessions: GetSessions) {
+	private let mainDispatching: Dispatching
+	
+	init(getSessions: GetSessions,
+		 mainDispatching: Dispatching) {
 		self.getSessions = getSessions
+		self.mainDispatching = mainDispatching
 	}
 }
 
@@ -40,13 +45,13 @@ extension SessionsViewModel {
 											timePeriod: "PM")
 					}
 				}
-
+				
 				self.sessionsModel = sessionsModel
 			}
 		})
 	}
-
+	
 	func onSessionsGone() {
-
+		
 	}
 }
