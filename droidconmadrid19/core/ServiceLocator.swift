@@ -18,6 +18,6 @@ class ServiceLocator {
 	}
 
 	private static func sessionizeApiClient() -> SessionizeApiClient {
-		return SessionizeApiClient(decoder: JSONDecoder())
+		return SessionizeApiClient(decoder: JSONDecoder(), urlSession: URLSession.shared)
 	}
 }

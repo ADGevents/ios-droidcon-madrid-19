@@ -92,3 +92,23 @@ extension Either {
 			ifRight: { .right(rf($0)) })
 	}
 }
+
+extension Either {
+	func rightOrNil() -> U? {
+		switch self {
+		case let .right(value):
+			return value
+		default:
+			return nil
+		}
+	}
+
+	func leftOrNil() -> T? {
+		switch self {
+		case let .left(value):
+			return value
+		default:
+			return nil
+		}
+	}
+}
