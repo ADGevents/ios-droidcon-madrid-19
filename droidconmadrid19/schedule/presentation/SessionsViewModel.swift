@@ -36,14 +36,12 @@ extension SessionsViewModel {
 			case .left:
 				print("Error getting sessions :(")
 			case let .right(sessions):
-				let sessionsModel = sessions.flatMap {(sessionGroup) -> [SessionModel] in
-					sessionGroup.sessions.map { (session) -> SessionModel in
+				let sessionsModel = sessions.map { session in
 						return SessionModel(title: session.title,
-											description: session.description,
-											category: sessionGroup.groupName,
-											time: "10",
+											description: session.description ?? "",
+											category: "random",
+											time: "10:00",
 											timePeriod: "PM")
-					}
 				}
 				
 				self.sessionsModel = sessionsModel

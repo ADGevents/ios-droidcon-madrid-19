@@ -22,7 +22,7 @@ class SessionizeRepository {
 }
 
 extension SessionizeRepository {
-	func getSessions(completion: @escaping (Either<SessionizeError, [SessionGroup]>) -> Void) {
+	func getSessions(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
 		return sessionizeApiClient.getSessions { getSessionsResult in
 			completion(getSessionsResult.mapLeft { _ in
 				return SessionizeError.generic

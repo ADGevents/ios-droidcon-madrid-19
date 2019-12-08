@@ -19,7 +19,7 @@ class GetSessions {
 
 extension GetSessions {
 	
-	func invoke(completion: @escaping (Either<ApiError, [SessionGroup]>) -> Void) {
+	func invoke(completion: @escaping (Either<ApiError, [Session]>) -> Void) {
 		sessionizeApiClient.getSessions(completion: completion)
 	}
 }

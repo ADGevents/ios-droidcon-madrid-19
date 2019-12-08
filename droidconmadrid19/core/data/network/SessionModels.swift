@@ -8,15 +8,9 @@
 
 import Foundation
 
-struct SessionGroup: Codable, Equatable {
-	let groupId: Int
-	let groupName: String
-	let sessions: [Session]
-}
-
 struct Session: Codable, Equatable {
 	let id: String
 	let title: String
-	let description: String
+	let description: String?
 	let room: String
 }

@@ -1,8 +1,4 @@
 [
-	{
-		"groupId": 10663,
-		"groupName": "Technical",
-		"sessions": [
 			{
 				"questionAnswers": [
 					{
@@ -148,13 +144,7 @@
 				],
 				"roomId": 216,
 				"room": "Yellow Room"
-			}
-		]
-	},
-	{
-		"groupId": 10664,
-		"groupName": "Scientific",
-		"sessions": [
+			},
 			{
 				"questionAnswers": [
 					{
@@ -228,7 +218,5 @@
 				"roomId": 215,
 				"room": "Green Room"
 			}
-		]
-	}
 ]
  
