@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - MaterialComponents (94.2.0):
     - MaterialComponents/ActionSheet (= 94.2.0)
     - "MaterialComponents/ActionSheet+Theming (= 94.2.0)"
@@ -650,10 +653,13 @@ PODS:
   - MotionInterchange (1.6.0)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 3.5)
   - MaterialComponents
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -661,12 +667,14 @@ SPEC REPOS:
     - MotionInterchange
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   MaterialComponents: ddaf6964e9bc429fc228fa46344e406c976cd85c
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
 
-PODFILE CHECKSUM: 63ced702cf46317f23ebac7f59aa86ddd58e164f
+PODFILE CHECKSUM: 935e92d8d47fef0a45b83d7ab3a344f8cabc68f7
 
 COCOAPODS: 1.5.3

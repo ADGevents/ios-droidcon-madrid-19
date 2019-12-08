@@ -44,6 +44,10 @@
 		3BBF342D237EBAC70064C563 /* GetSpeakersValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF342C237EBAC70064C563 /* GetSpeakersValidResponse.json */; };
 		3BBF3431237EBAEC0064C563 /* GetSpeakersInvalidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF3430237EBAEC0064C563 /* GetSpeakersInvalidResponse.json */; };
 		3BBF3433237EBB0B0064C563 /* GetSpeakersStubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */; };
+		3BFAAB2F239D156B00179767 /* SessionizeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB2E239D156B00179767 /* SessionizeRepository.swift */; };
+		3BFAAB31239D17F000179767 /* GetSpeakers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB30239D17F000179767 /* GetSpeakers.swift */; };
+		3BFAAB33239D186500179767 /* SpeakersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB32239D186500179767 /* SpeakersViewModel.swift */; };
+		3BFAAB35239D1B5500179767 /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB34239D1B5500179767 /* SpeakerCell.swift */; };
 		63455215F100037000F3F3A6 /* Pods_droidconmadrid19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */; };
 		CB49DACD06E389D1E3F97A5B /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +114,10 @@
 		3BBF342C237EBAC70064C563 /* GetSpeakersValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSpeakersValidResponse.json; sourceTree = "<group>"; };
 		3BBF3430237EBAEC0064C563 /* GetSpeakersInvalidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSpeakersInvalidResponse.json; sourceTree = "<group>"; };
 		3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeakersStubResponse.swift; sourceTree = "<group>"; };
+		3BFAAB2E239D156B00179767 /* SessionizeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeRepository.swift; sourceTree = "<group>"; };
+		3BFAAB30239D17F000179767 /* GetSpeakers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeakers.swift; sourceTree = "<group>"; };
+		3BFAAB32239D186500179767 /* SpeakersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewModel.swift; sourceTree = "<group>"; };
+		3BFAAB34239D1B5500179767 /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
 		71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,11 +259,9 @@
 		3B488D872370D53A005D0D54 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				3BFAAB2D239D154F00179767 /* data */,
 				3BBF341D237EAF920064C563 /* dispatch */,
-				3B488D7E2370A34E005D0D54 /* network */,
 				3B488D8E2370D850005D0D54 /* ui */,
-				3B488D882370D54F005D0D54 /* Either.swift */,
-				3B488D8A2370D5A3005D0D54 /* ApiError.swift */,
 				3B488D9C2370E666005D0D54 /* ServiceLocator.swift */,
 			);
 			path = core;
@@ -304,6 +310,7 @@
 		3BBF3400237DC1DE0064C563 /* speakers */ = {
 			isa = PBXGroup;
 			children = (
+				3BFAAB2C239D153E00179767 /* domain */,
 				3BBF3402237DC2500064C563 /* presentation */,
 			);
 			path = speakers;
@@ -321,6 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				3BBF3403237DC2B40064C563 /* SpeakersViewController.swift */,
+				3BFAAB32239D186500179767 /* SpeakersViewModel.swift */,
+				3BFAAB34239D1B5500179767 /* SpeakerCell.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -388,6 +397,25 @@
 				3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */,
 			);
 			path = responses;
+			sourceTree = "<group>";
+		};
+		3BFAAB2C239D153E00179767 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB30239D17F000179767 /* GetSpeakers.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		3BFAAB2D239D154F00179767 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3B488D7E2370A34E005D0D54 /* network */,
+				3B488D882370D54F005D0D54 /* Either.swift */,
+				3B488D8A2370D5A3005D0D54 /* ApiError.swift */,
+				3BFAAB2E239D156B00179767 /* SessionizeRepository.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		8E0BCCDB98EC216F139F2807 /* Frameworks */ = {
@@ -590,6 +618,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
@@ -598,6 +628,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
@@ -616,16 +648,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFAAB35239D1B5500179767 /* SpeakerCell.swift in Sources */,
 				3BBF33F3237D5B250064C563 /* Fonts.swift in Sources */,
 				3BBF341F237EAFA20064C563 /* DispatchingQueues.swift in Sources */,
 				3B488D862370D1E7005D0D54 /* SessionModels.swift in Sources */,
 				3BBF33F1237D5ACF0064C563 /* FontSize.swift in Sources */,
 				3BBF3409237E0C140064C563 /* SpeakerModels.swift in Sources */,
 				3BBF33F5237D64120064C563 /* Colors.swift in Sources */,
+				3BFAAB33239D186500179767 /* SpeakersViewModel.swift in Sources */,
 				3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */,
 				3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */,
 				3BBF33FB237D8AFA0064C563 /* HomeViewController.swift in Sources */,
 				3B488D9B2370E2C0005D0D54 /* SessionModel.swift in Sources */,
+				3BFAAB31239D17F000179767 /* GetSpeakers.swift in Sources */,
 				3BBF3404237DC2B40064C563 /* SpeakersViewController.swift in Sources */,
 				3B488D5023709FCA005D0D54 /* ScheduleViewController.swift in Sources */,
 				3BBF3407237DC32D0064C563 /* InfoViewController.swift in Sources */,
@@ -633,6 +668,7 @@
 				3B488D902370D866005D0D54 /* UITableViewCell+Utils.swift in Sources */,
 				3BBF33EF237D5A950064C563 /* FontStyle.swift in Sources */,
 				3B488D8D2370D754005D0D54 /* GetSessions.swift in Sources */,
+				3BFAAB2F239D156B00179767 /* SessionizeRepository.swift in Sources */,
 				3B488D4E23709FCA005D0D54 /* AppDelegate.swift in Sources */,
 				3B488D962370D963005D0D54 /* SessionCell.swift in Sources */,
 				3B488D992370DFC7005D0D54 /* SessionsViewModel.swift in Sources */,
