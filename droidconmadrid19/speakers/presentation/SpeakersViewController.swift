@@ -9,16 +9,63 @@
 import UIKit
 
 class SpeakersViewController: UIViewController {
+
+	private lazy var headerView: UIView = {
+		let headerView = UIView()
+		headerView.backgroundColor = .white
+		return headerView
+	}()
+
+	private lazy var speakers: UITableView = {
+		let speakers = UITableView()
+		speakers.dataSource = self
+		SpeakerCell.register(on: speakers)
+		return speakers
+	}()
+
+	private let speakersViewModel = ServiceLocator.speakersViewModel()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpTitle()
+		setUpSpeakersTableView()
+		bindViewModel()
+	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		unbindViewModel()
+		super.viewWillDisappear(animated)
+	}
+}
+
+extension SpeakersViewController: UITableViewDataSource {
+
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return speakersViewModel.speakers.count
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let speakerCell = SpeakerCell.dequeueReusableCell(for: indexPath, from: speakers)
+		let speaker = speakersViewModel.speakers[indexPath.row]
+		speakerCell.bind(speaker)
+
+		return speakerCell
+	}
+}
+
+private extension SpeakersViewController {
+	func setUpSpeakersTableView() {
+		self.view.addSubview(speakers, constraints: [
+			self.view.bottomAnchor.constraint(equalTo: speakers.bottomAnchor),
+			self.view.leadingAnchor.constraint(equalTo: speakers.leadingAnchor),
+			self.view.trailingAnchor.constraint(equalTo: speakers.trailingAnchor),
+			self.headerView.bottomAnchor.constraint(equalTo: speakers.topAnchor)
+		])
 	}
 }
 
 private extension SpeakersViewController {
 	func setUpTitle() {
-		let headerView = UIView()
-		headerView.backgroundColor = .white
 		self.view.addSubview(headerView)
 		
 		let titleLabel = UILabel()
@@ -39,5 +86,16 @@ private extension SpeakersViewController {
 		titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
 		titleLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 0.4).isActive = true
 		titleLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.5).isActive = true
+	}
+}
+
+private extension SpeakersViewController {
+	func bindViewModel() {
+		speakersViewModel.speakersUpdatedCallback = speakers.reloadData
+		speakersViewModel.onSpeakersVisible()
+	}
+
+	func unbindViewModel() {
+		speakersViewModel.speakersUpdatedCallback = {}
 	}
 }

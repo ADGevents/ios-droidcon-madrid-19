@@ -9,13 +9,26 @@
 import Foundation
 
 class ServiceLocator {
+
+	static func speakersViewModel() -> SpeakersViewModel {
+		return SpeakersViewModel(getSpeakers: getSpeakers(), mainDispatching: AsyncQueue.main)
+	}
+
 	static func sessionsViewModel() -> SessionsViewModel {
 		return SessionsViewModel(getSessions: getSessions(),
 								 mainDispatching: AsyncQueue.main)
 	}
+
+	private static func getSpeakers() -> GetSpeakers {
+		return GetSpeakers(sessionizeRepository: sessionizeRepository())
+	}
 	
 	private static func getSessions() -> GetSessions {
 		return GetSessions(sessionizeApiClient: sessionizeApiClient())
+	}
+
+	private static func sessionizeRepository() -> SessionizeRepository {
+		return SessionizeRepository(sessionizeApiClient: sessionizeApiClient())
 	}
 	
 	private static func sessionizeApiClient() -> SessionizeApiClient {

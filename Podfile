@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'droidconmadrid19' do
   pod 'MaterialComponents'
+  pod 'AlamofireImage', '~> 3.5'
 
   target 'droidconmadrid19Tests' do
 	  use_frameworks!
