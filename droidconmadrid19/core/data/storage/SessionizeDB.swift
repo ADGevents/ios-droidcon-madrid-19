@@ -118,4 +118,9 @@ extension SQLiteSessionizeDB {
 	func transaction(block: () throws -> Void) throws {
 		try connection?.transaction(block: block)
 	}
+
+	func update(table: Table, predicate: Expression<Bool>, setters: [SQLite.Setter]) throws {
+		let filteredTable = table.filter(predicate)
+		try connection?.run(filteredTable.update(setters))
+	}
 }

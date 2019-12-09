@@ -9,20 +9,38 @@
 import Foundation
 
 class SessionViewModel {
-	
+
+	var sessionUpdatedCallback: () -> Void = {}
 	var session: Session
 
-	init(session: Session) {
+	private let updateSessionIsStarredValue: UpdateSessionIsStarredValue
+
+	init(session: Session,
+		 updateSessionIsStarredValue: UpdateSessionIsStarredValue) {
 		self.session = session
+		self.updateSessionIsStarredValue = updateSessionIsStarredValue
 	}
 }
 
 extension SessionViewModel {
 	func onStarClicked() {
-		session = Session(id: session.id,
-						  title: session.title,
-						  description: session.description,
-						  room: session.room,
-						  isStarred: !(session.isStarred ?? false))
+		let isStarred = !(session.isStarred ?? false)
+		session = session.copy(isStarred: isStarred)
+		sessionUpdatedCallback()
+		updateSessionIsStarredValue.invoke(sessionId: session.id, isStarred: isStarred)
+			.fold({ error in
+				session = session.copy(isStarred: !isStarred)
+				sessionUpdatedCallback()
+			}, {success in })
+	}
+}
+
+extension Session {
+	func copy(isStarred: Bool) -> Session {
+		return Session(id: self.id,
+					   title: self.title,
+					   description: self.description,
+					   room: self.room,
+					   isStarred: isStarred)
 	}
 }

@@ -34,6 +34,14 @@ extension SessionizeDao {
 	func insertSessions(sessions: [Session]) -> Try<Void> {
 		return insert(intoTable: Sessions.table, values: sessions) { $0.toSetters() }
 	}
+
+	func updateSessionStarredValue(sessionId: String, isStarred: Bool) -> Try<Void> {
+		return Try.invoke {
+			try sessionizeDb.update(table: Sessions.table,
+									predicate: (Sessions.id == sessionId),
+									setters: [SessionSetters.isStarred(isStarred)])
+		}
+	}
 }
 
 // MARK: Speakers

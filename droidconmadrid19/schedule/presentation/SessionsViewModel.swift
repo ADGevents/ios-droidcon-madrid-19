@@ -21,11 +21,14 @@ class SessionsViewModel {
 	
 	private let getSessions: GetSessions
 	private let mainDispatching: Dispatching
+	private let updateSessionIsStarredValue: UpdateSessionIsStarredValue
 	
 	init(getSessions: GetSessions,
-		 mainDispatching: Dispatching) {
+		 mainDispatching: Dispatching,
+		 updateSessionIsStarredValue: UpdateSessionIsStarredValue) {
 		self.getSessions = getSessions
 		self.mainDispatching = mainDispatching
+		self.updateSessionIsStarredValue = updateSessionIsStarredValue
 	}
 }
 
@@ -36,7 +39,9 @@ extension SessionsViewModel {
 			case .left:
 				print("Error getting sessions :(")
 			case let .right(sessions):
-				self.sessions = sessions.map { SessionViewModel(session: $0) }
+				self.sessions = sessions.map {
+					SessionViewModel(session: $0, updateSessionIsStarredValue: self.updateSessionIsStarredValue)
+				}
 			}
 		})
 	}

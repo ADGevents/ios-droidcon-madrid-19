@@ -53,6 +53,7 @@
 		3BFAAB42239E78BC00179767 /* Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB41239E78BC00179767 /* Mappers.swift */; };
 		3BFAAB44239E796300179767 /* DbEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB43239E796300179767 /* DbEntities.swift */; };
 		3BFAAB46239EA34000179767 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB45239EA34000179767 /* SessionViewModel.swift */; };
+		3BFAAB48239EB7FA00179767 /* UpdateSessionIsStarredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */; };
 		63455215F100037000F3F3A6 /* Pods_droidconmadrid19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */; };
 		CB49DACD06E389D1E3F97A5B /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		3BFAAB41239E78BC00179767 /* Mappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappers.swift; sourceTree = "<group>"; };
 		3BFAAB43239E796300179767 /* DbEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbEntities.swift; sourceTree = "<group>"; };
 		3BFAAB45239EA34000179767 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSessionIsStarredValue.swift; sourceTree = "<group>"; };
 		71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				3B488D8C2370D754005D0D54 /* GetSessions.swift */,
+				3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				3B488D9D2370E666005D0D54 /* ServiceLocator.swift in Sources */,
 				3BFAAB44239E796300179767 /* DbEntities.swift in Sources */,
 				3B488D902370D866005D0D54 /* UITableViewCell+Utils.swift in Sources */,
+				3BFAAB48239EB7FA00179767 /* UpdateSessionIsStarredValue.swift in Sources */,
 				3BBF33EF237D5A950064C563 /* FontStyle.swift in Sources */,
 				3BFAAB38239D6F7300179767 /* SessionizeDB.swift in Sources */,
 				3BFAAB42239E78BC00179767 /* Mappers.swift in Sources */,

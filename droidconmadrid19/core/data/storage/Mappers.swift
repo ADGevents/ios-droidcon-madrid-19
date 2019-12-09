@@ -46,6 +46,12 @@ extension Session {
 	}
 }
 
+class SessionSetters {
+	static func isStarred(_ isStarred: Bool) -> SQLite.Setter {
+		return Sessions.isStarred <- isStarred
+	}
+}
+
 extension Speaker {
 	func toSetters() -> [SQLite.Setter] {
 		return [Speakers.id <- self.id,

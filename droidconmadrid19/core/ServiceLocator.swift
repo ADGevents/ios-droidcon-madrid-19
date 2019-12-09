@@ -9,16 +9,17 @@
 import Foundation
 
 class ServiceLocator {
-
+	
 	static func speakersViewModel() -> SpeakersViewModel {
 		return SpeakersViewModel(getSpeakers: getSpeakers(), mainDispatching: AsyncQueue.main)
 	}
-
+	
 	static func sessionsViewModel() -> SessionsViewModel {
 		return SessionsViewModel(getSessions: getSessions(),
-								 mainDispatching: AsyncQueue.main)
+								 mainDispatching: AsyncQueue.main,
+								 updateSessionIsStarredValue: updateSessionIsStarredValue())
 	}
-
+	
 	private static func getSpeakers() -> GetSpeakers {
 		return GetSpeakers(sessionizeRepository: sessionizeRepository)
 	}
@@ -26,19 +27,23 @@ class ServiceLocator {
 	private static func getSessions() -> GetSessions {
 		return GetSessions(sessionizeRepository: sessionizeRepository)
 	}
-
+	
 	private static let sessionizeRepository = SessionizeRepository(sessionizeApiClient: sessionizeApiClient(),
 																   sessionizeDao: sessionizeDao())
-
+	
 	private static func sessionizeApiClient() -> SessionizeApiClient {
 		return SessionizeApiClient(decoder: JSONDecoder(), urlSession: URLSession.shared)
 	}
-
+	
 	private static func sessionizeDao() -> SessionizeDao {
 		return SessionizeDao(sessionizeDb: sessionizeDb())
 	}
-
+	
 	private static func sessionizeDb() -> SQLiteSessionizeDB {
 		return SQLiteSessionizeDB.instance()!
+	}
+	
+	private static func updateSessionIsStarredValue() -> UpdateSessionIsStarredValue {
+		return UpdateSessionIsStarredValue(sessionizeRepository: sessionizeRepository)
 	}
 }

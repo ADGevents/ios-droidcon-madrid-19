@@ -42,6 +42,10 @@ extension SessionizeRepository {
 		})
 	}
 
+	func updateSessionIsStarredValue(sessionId: String, isStarred: Bool) -> Try<Void> {
+		return sessionizeDao.updateSessionStarredValue(sessionId: sessionId, isStarred: isStarred)
+	}
+
 	private func getSessionsFromApi(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
 		sessionizeApiClient.getSessions { getSessionsResult in
 			getSessionsResult.run { sessions in

@@ -59,8 +59,6 @@ class SessionCell: UITableViewCell {
 			bindViewModel()
 		}
 	}
-
-	var onStarClickedCallback: ((String, Bool) -> Void)?
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -115,22 +113,25 @@ private extension SessionCell {
 			return
 		}
 
-		let session = viewModel.session
+		bindSession(session: viewModel.session)
+		viewModel.sessionUpdatedCallback = { self.bindSession(session: viewModel.session) }
+	}
 
+	func bindSession(session: Session) {
 		timeView.text = "10:00"
 		timePeriodView.text = "AM"
 		sessionTitleView.text = session.title
 		sessionDescriptionView.text = session.description
 
 		let isStarred = session.isStarred ?? false
+		bindStarImage(isStarred)
 
 		let singleTap = UITapGestureRecognizer(target: self, action: #selector(onStarClicked))
 		starView.isUserInteractionEnabled = true
 		starView.addGestureRecognizer(singleTap)
-		updateStarImage(isStarred)
 	}
 
-	private func updateStarImage(_ isStarred: Bool) {
+	private func bindStarImage(_ isStarred: Bool) {
 		if (isStarred) {
 			starView.setImage(UIImage(named: "ic_star_filled"), for: .normal)
 		} else {
@@ -139,12 +140,6 @@ private extension SessionCell {
 	}
 
 	@objc func onStarClicked() {
-		print("star clicked")
-		guard let viewModel = sessionViewModel else {
-			return
-		}
-
-		viewModel.onStarClicked()
-		updateStarImage(viewModel.session.isStarred ?? false)
+		sessionViewModel?.onStarClicked()
 	}
 }
