@@ -91,6 +91,24 @@ extension Either {
 			ifLeft: { .left(lf($0)) },
 			ifRight: { .right(rf($0)) })
 	}
+
+	public func fold(leftBy lf: (T) -> Void, rightBy rf: (U) -> Void) {
+		switch self {
+		case let .left(x):
+			lf(x)
+		case let .right(y):
+			rf(y)
+		}
+	}
+
+	public func run(rightBy rf: (U) -> Void) {
+		switch self {
+		case let .right(y):
+			rf(y)
+		default:
+			return
+		}
+	}
 }
 
 extension Either {

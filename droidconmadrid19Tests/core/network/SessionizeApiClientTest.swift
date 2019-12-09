@@ -28,10 +28,10 @@ extension SessionizeApiClientTest {
 	func testGetSessions_happyCase() {
 		givenASuccessfullGetSessionsResponse()
 		
-		var actualResult: Either<ApiError, [SessionGroup]>?
+		var actualResult: Either<ApiError, [Session]>?
 		sut.getSessions{ result in actualResult = result}
 		
-		let expectedSessionGroups = expectedSessionGroupsForSuccess()
+		let expectedSessionGroups = expectedSessionsForSuccess()
 		let actualSessionGroups = actualResult?.rightOrNil()
 		XCTAssertNotNil(actualSessionGroups)
 		XCTAssertEqual(actualSessionGroups, expectedSessionGroups)
@@ -40,7 +40,7 @@ extension SessionizeApiClientTest {
 	func testGetSessions_networkError() {
 		givenNoResponse()
 		
-		var actualResult: Either<ApiError, [SessionGroup]>?
+		var actualResult: Either<ApiError, [Session]>?
 		sut.getSessions{ result in actualResult = result }
 		
 		let expectedError = ApiError.generic
@@ -52,7 +52,7 @@ extension SessionizeApiClientTest {
 	func testGetSessions_invalidResponseError() {
 		givenAnInvalidGetSessionsResponse()
 		
-		var actualResult: Either<ApiError, [SessionGroup]>?
+		var actualResult: Either<ApiError, [Session]>?
 		sut.getSessions{ result in actualResult = result }
 		
 		let expectedError = ApiError.generic
@@ -103,23 +103,20 @@ extension SessionizeApiClientTest {
 }
 
 private extension SessionizeApiClientTest {
-	func expectedSessionGroupsForSuccess() -> [SessionGroup] {
-		return [SessionGroup(groupId: 10663,
-							 groupName: "Technical",
-							 sessions: [Session(id: "14022",
-												title: "Aiden's Session",
-												description: "Usually, you would find a session description here. But, this is not a real session submission, so description is missing. Ha!",
-												room: "Green Room"),
-										Session(id: "14023",
-												title: "Lucas's Session",
-												description: "Usually, you would find a session description here. But, this is not a real session submission, so description is missing. Ha!",
-												room: "Yellow Room")]),
-				SessionGroup(groupId: 10664,
-							 groupName: "Scientific",
-							 sessions: [Session(id: "14020",
-												title: "Emma's Session",
-												description: "Usually, you would find a session description here. But, this is not a real session submission, so description is missing. Ha!",
-												room: "Green Room")])
+	func expectedSessionsForSuccess() -> [Session] {
+		return [
+			Session(id: "14022",
+					title: "Aiden's Session",
+					description: "Usually, you would find a session description here. But, this is not a real session submission, so description is missing. Ha!",
+					room: "Green Room"),
+			Session(id: "14023",
+					title: "Lucas's Session",
+					description: "Usually, you would find a session description here. But, this is not a real session submission, so description is missing. Ha!",
+					room: "Yellow Room"),
+			Session(id: "14020",
+					title: "Emma's Session",
+					description: "Usually, you would find a session description here. But, this is not a real session submission, so description is missing. Ha!",
+					room: "Green Room")
 		]
 	}
 	

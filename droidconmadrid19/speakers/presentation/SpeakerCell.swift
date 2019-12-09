@@ -30,6 +30,7 @@ class SpeakerCell: UITableViewCell {
 		subtitle.textAlignment = .left
 		subtitle.font = UIFont.caption1
 		subtitle.textColor = Colors.textSeconday
+		subtitle.numberOfLines = 0
 		return subtitle
 	}()
 

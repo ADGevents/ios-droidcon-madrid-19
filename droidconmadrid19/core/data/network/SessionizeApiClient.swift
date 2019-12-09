@@ -9,7 +9,7 @@
 import Foundation
 
 class SessionizeApiClient {
-	private static let sessionizeApiEndpoint = "https://sessionize.com/api/v2/jl4ktls0/view"
+	private static let sessionizeApiEndpoint = "http://ec2-54-213-45-43.us-west-2.compute.amazonaws.com"
 	
 	private let decoder: JSONDecoder
 	private let urlSession: URLSession
@@ -23,12 +23,12 @@ class SessionizeApiClient {
 
 extension SessionizeApiClient {
 	
-	func getSessions(completion: @escaping (Either<ApiError, [SessionGroup]>) -> Void) {
-		get(rawUrl: "\(SessionizeApiClient.sessionizeApiEndpoint)/Sessions", completion: completion)
+	func getSessions(completion: @escaping (Either<ApiError, [Session]>) -> Void) {
+		get(rawUrl: "\(SessionizeApiClient.sessionizeApiEndpoint)/sessions", completion: completion)
 	}
 	
 	func getSpeakers(completion: @escaping (Either<ApiError, [Speaker]>) -> Void) {
-		get(rawUrl: "\(SessionizeApiClient.sessionizeApiEndpoint)/Speakers", completion: completion)
+		get(rawUrl: "\(SessionizeApiClient.sessionizeApiEndpoint)/speakers", completion: completion)
 	}
 }
 

@@ -22,7 +22,6 @@
 		3B488D922370D895005D0D54 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D912370D895005D0D54 /* UIView+Utils.swift */; };
 		3B488D962370D963005D0D54 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D942370D963005D0D54 /* SessionCell.swift */; };
 		3B488D992370DFC7005D0D54 /* SessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D982370DFC7005D0D54 /* SessionsViewModel.swift */; };
-		3B488D9B2370E2C0005D0D54 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D9A2370E2C0005D0D54 /* SessionModel.swift */; };
 		3B488D9D2370E666005D0D54 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D9C2370E666005D0D54 /* ServiceLocator.swift */; };
 		3BBF33EF237D5A950064C563 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33EE237D5A950064C563 /* FontStyle.swift */; };
 		3BBF33F1237D5ACF0064C563 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF33F0237D5ACF0064C563 /* FontSize.swift */; };
@@ -48,6 +47,13 @@
 		3BFAAB31239D17F000179767 /* GetSpeakers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB30239D17F000179767 /* GetSpeakers.swift */; };
 		3BFAAB33239D186500179767 /* SpeakersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB32239D186500179767 /* SpeakersViewModel.swift */; };
 		3BFAAB35239D1B5500179767 /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB34239D1B5500179767 /* SpeakerCell.swift */; };
+		3BFAAB38239D6F7300179767 /* SessionizeDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB37239D6F7300179767 /* SessionizeDB.swift */; };
+		3BFAAB3C239D85FC00179767 /* SessionizeDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB3B239D85FC00179767 /* SessionizeDao.swift */; };
+		3BFAAB40239D9BA300179767 /* SessionsDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB3F239D9BA300179767 /* SessionsDaoTest.swift */; };
+		3BFAAB42239E78BC00179767 /* Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB41239E78BC00179767 /* Mappers.swift */; };
+		3BFAAB44239E796300179767 /* DbEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB43239E796300179767 /* DbEntities.swift */; };
+		3BFAAB46239EA34000179767 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB45239EA34000179767 /* SessionViewModel.swift */; };
+		3BFAAB48239EB7FA00179767 /* UpdateSessionIsStarredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */; };
 		63455215F100037000F3F3A6 /* Pods_droidconmadrid19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */; };
 		CB49DACD06E389D1E3F97A5B /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */; };
 /* End PBXBuildFile section */
@@ -92,7 +98,6 @@
 		3B488D912370D895005D0D54 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		3B488D942370D963005D0D54 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		3B488D982370DFC7005D0D54 /* SessionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewModel.swift; sourceTree = "<group>"; };
-		3B488D9A2370E2C0005D0D54 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		3B488D9C2370E666005D0D54 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		3BBF33EE237D5A950064C563 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		3BBF33F0237D5ACF0064C563 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
@@ -118,6 +123,13 @@
 		3BFAAB30239D17F000179767 /* GetSpeakers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeakers.swift; sourceTree = "<group>"; };
 		3BFAAB32239D186500179767 /* SpeakersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewModel.swift; sourceTree = "<group>"; };
 		3BFAAB34239D1B5500179767 /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
+		3BFAAB37239D6F7300179767 /* SessionizeDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeDB.swift; sourceTree = "<group>"; };
+		3BFAAB3B239D85FC00179767 /* SessionizeDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeDao.swift; sourceTree = "<group>"; };
+		3BFAAB3F239D9BA300179767 /* SessionsDaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsDaoTest.swift; sourceTree = "<group>"; };
+		3BFAAB41239E78BC00179767 /* Mappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappers.swift; sourceTree = "<group>"; };
+		3BFAAB43239E796300179767 /* DbEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbEntities.swift; sourceTree = "<group>"; };
+		3BFAAB45239EA34000179767 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSessionIsStarredValue.swift; sourceTree = "<group>"; };
 		71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,22 +238,15 @@
 			children = (
 				3B488D932370D93A005D0D54 /* presentation */,
 				3B488D7D2370A20D005D0D54 /* domain */,
-				3B488D7C2370A1E7005D0D54 /* data */,
 			);
 			path = schedule;
-			sourceTree = "<group>";
-		};
-		3B488D7C2370A1E7005D0D54 /* data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = data;
 			sourceTree = "<group>";
 		};
 		3B488D7D2370A20D005D0D54 /* domain */ = {
 			isa = PBXGroup;
 			children = (
 				3B488D8C2370D754005D0D54 /* GetSessions.swift */,
+				3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -286,7 +291,7 @@
 				3B488D4F23709FCA005D0D54 /* ScheduleViewController.swift */,
 				3B488D942370D963005D0D54 /* SessionCell.swift */,
 				3B488D982370DFC7005D0D54 /* SessionsViewModel.swift */,
-				3B488D9A2370E2C0005D0D54 /* SessionModel.swift */,
+				3BFAAB45239EA34000179767 /* SessionViewModel.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 		3BBF340A237E10410064C563 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				3BFAAB3D239D9B8D00179767 /* data */,
 				3BBF3420237EB15E0064C563 /* dispatch */,
 				3BBF340B237E10480064C563 /* network */,
 			);
@@ -410,12 +416,40 @@
 		3BFAAB2D239D154F00179767 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				3BFAAB36239D6F6600179767 /* storage */,
 				3B488D7E2370A34E005D0D54 /* network */,
 				3B488D882370D54F005D0D54 /* Either.swift */,
 				3B488D8A2370D5A3005D0D54 /* ApiError.swift */,
 				3BFAAB2E239D156B00179767 /* SessionizeRepository.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		3BFAAB36239D6F6600179767 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB37239D6F7300179767 /* SessionizeDB.swift */,
+				3BFAAB3B239D85FC00179767 /* SessionizeDao.swift */,
+				3BFAAB41239E78BC00179767 /* Mappers.swift */,
+				3BFAAB43239E796300179767 /* DbEntities.swift */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
+		3BFAAB3D239D9B8D00179767 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB3E239D9B9500179767 /* storage */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		3BFAAB3E239D9B9500179767 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB3F239D9BA300179767 /* SessionsDaoTest.swift */,
+			);
+			path = storage;
 			sourceTree = "<group>";
 		};
 		8E0BCCDB98EC216F139F2807 /* Frameworks */ = {
@@ -620,21 +654,25 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-droidconmadrid19/Pods-droidconmadrid19-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bow/Bow.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -655,21 +693,26 @@
 				3BBF33F1237D5ACF0064C563 /* FontSize.swift in Sources */,
 				3BBF3409237E0C140064C563 /* SpeakerModels.swift in Sources */,
 				3BBF33F5237D64120064C563 /* Colors.swift in Sources */,
+				3BFAAB46239EA34000179767 /* SessionViewModel.swift in Sources */,
 				3BFAAB33239D186500179767 /* SpeakersViewModel.swift in Sources */,
 				3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */,
 				3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */,
 				3BBF33FB237D8AFA0064C563 /* HomeViewController.swift in Sources */,
-				3B488D9B2370E2C0005D0D54 /* SessionModel.swift in Sources */,
 				3BFAAB31239D17F000179767 /* GetSpeakers.swift in Sources */,
 				3BBF3404237DC2B40064C563 /* SpeakersViewController.swift in Sources */,
 				3B488D5023709FCA005D0D54 /* ScheduleViewController.swift in Sources */,
 				3BBF3407237DC32D0064C563 /* InfoViewController.swift in Sources */,
 				3B488D9D2370E666005D0D54 /* ServiceLocator.swift in Sources */,
+				3BFAAB44239E796300179767 /* DbEntities.swift in Sources */,
 				3B488D902370D866005D0D54 /* UITableViewCell+Utils.swift in Sources */,
+				3BFAAB48239EB7FA00179767 /* UpdateSessionIsStarredValue.swift in Sources */,
 				3BBF33EF237D5A950064C563 /* FontStyle.swift in Sources */,
+				3BFAAB38239D6F7300179767 /* SessionizeDB.swift in Sources */,
+				3BFAAB42239E78BC00179767 /* Mappers.swift in Sources */,
 				3B488D8D2370D754005D0D54 /* GetSessions.swift in Sources */,
 				3BFAAB2F239D156B00179767 /* SessionizeRepository.swift in Sources */,
 				3B488D4E23709FCA005D0D54 /* AppDelegate.swift in Sources */,
+				3BFAAB3C239D85FC00179767 /* SessionizeDao.swift in Sources */,
 				3B488D962370D963005D0D54 /* SessionCell.swift in Sources */,
 				3B488D992370DFC7005D0D54 /* SessionsViewModel.swift in Sources */,
 				3B488D892370D54F005D0D54 /* Either.swift in Sources */,
@@ -682,6 +725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFAAB40239D9BA300179767 /* SessionsDaoTest.swift in Sources */,
 				3BBF3422237EB16C0064C563 /* DispatchingQueuesStubs.swift in Sources */,
 				3BBF340F237E11FA0064C563 /* URLSessionMock.swift in Sources */,
 				3BBF3412237E12800064C563 /* SessionizeApiClientTest.swift in Sources */,

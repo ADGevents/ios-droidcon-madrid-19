@@ -46,14 +46,14 @@ extension ScheduleViewController: UITableViewDelegate {
 extension ScheduleViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return sessionsViewModel.sessionsModel.count
+		return sessionsViewModel.sessions.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let sessionCell = SessionCell.dequeueReusableCell(for: indexPath, from: sessions)
 		
-		let session = sessionsViewModel.sessionsModel[indexPath.row]
-		sessionCell.bind(session)
+		let sessionViewModel = sessionsViewModel.sessions[indexPath.row]
+		sessionCell.sessionViewModel = sessionViewModel
 		
 		return sessionCell
 	}
