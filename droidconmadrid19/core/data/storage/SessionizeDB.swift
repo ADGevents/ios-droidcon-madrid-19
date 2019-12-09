@@ -19,20 +19,6 @@ enum DBType {
 	case inMemory
 }
 
-class Sessions {
-	static let table = Table("sessions")
-	static let id = Expression<String>("id")
-	static let title = Expression<String>("title")
-	static let description = Expression<String?>("description")
-	// static let startsAt = Expression<String>("startsAt")
-	// static let endsAt = Expression<String>("endsAt")
-	// static let isServiceSession = Expression<Bool>("isServiceSession")
-	// static let isPlenumSession = Expression<Bool>("isPlenumSession")
-	// static let roomId = Expression<Int>("roomId")
-	static let roomName = Expression<String>("roomName")
-	// static let isStarred = Expression<Bool>("isStarred")
-}
-
 class SQLiteSessionizeDB {
 
 	private let connection: Connection?
@@ -72,6 +58,8 @@ extension SQLiteSessionizeDB {
 		do {
 			try conn.transaction {
 				try createSessionsTable(dbConnection: conn)
+				try createSpeakersTable(dbConnection: conn)
+				try createLinksTable(dbConnection: conn)
 			}
 		} catch {
 
@@ -79,7 +67,7 @@ extension SQLiteSessionizeDB {
 	}
 }
 
-extension SQLiteSessionizeDB {
+private extension SQLiteSessionizeDB {
 	func createSessionsTable(dbConnection: Connection) throws {
 		try dbConnection.run(Sessions.table.create(ifNotExists: true) { table in
 			table.column(Sessions.id, primaryKey: true)
@@ -95,6 +83,30 @@ extension SQLiteSessionizeDB {
 		})
 	}
 
+	func createSpeakersTable(dbConnection: Connection) throws {
+		try dbConnection.run(Speakers.table.create(ifNotExists: true) { table in
+			table.column(Speakers.id, primaryKey: true)
+			table.column(Speakers.firstName)
+			table.column(Speakers.lastName)
+			table.column(Speakers.fullName)
+			table.column(Speakers.bio)
+			table.column(Speakers.tagLine)
+			table.column(Speakers.profilePicture)
+		})
+	}
+
+	func createLinksTable(dbConnection: Connection) throws {
+		try dbConnection.run(Links.table.create(ifNotExists: true) { table in
+			table.column(Links.id, primaryKey: .autoincrement)
+			table.column(Links.speakerId)
+			table.column(Links.title)
+			table.column(Links.url)
+			table.column(Links.linkType)
+		})
+	}
+}
+
+extension SQLiteSessionizeDB {
 	func getAll(table: Table) throws -> [Row]  {
 		return try connection?.prepare(table).map { $0 } ?? []
 	}

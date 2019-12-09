@@ -27,14 +27,14 @@ class ServiceLocator {
 		return GetSessions(sessionizeRepository: sessionizeRepository)
 	}
 
-	private static let sessionizeRepository = SessionizeRepository(sessionizeApiClient: sessionizeApiClient(), sessionsDao: sessionsDao())
+	private static let sessionizeRepository = SessionizeRepository(sessionizeApiClient: sessionizeApiClient(), sessionizeDao: sessionizeDao())
 
 	private static func sessionizeApiClient() -> SessionizeApiClient {
 		return SessionizeApiClient(decoder: JSONDecoder(), urlSession: URLSession.shared)
 	}
 
-	private static func sessionsDao() -> SessionsDao {
-		return SessionsDao(sessionizeDb: sessionizeDb())
+	private static func sessionizeDao() -> SessionizeDao {
+		return SessionizeDao(sessionizeDb: sessionizeDb())
 	}
 
 	private static func sessionizeDb() -> SQLiteSessionizeDB {
