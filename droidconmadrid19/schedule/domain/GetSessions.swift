@@ -10,16 +10,16 @@ import Foundation
 
 class GetSessions {
 	
-	private let sessionizeApiClient: SessionizeApiClient
+	private let sessionizeRepository: SessionizeRepository
 	
-	init(sessionizeApiClient: SessionizeApiClient) {
-		self.sessionizeApiClient = sessionizeApiClient
+	init(sessionizeRepository: SessionizeRepository) {
+		self.sessionizeRepository = sessionizeRepository
 	}
 }
 
 extension GetSessions {
 	
-	func invoke(completion: @escaping (Either<ApiError, [Session]>) -> Void) {
-		sessionizeApiClient.getSessions(completion: completion)
+	func invoke(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
+		sessionizeRepository.getSessions(completion: completion)
 	}
 }

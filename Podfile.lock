@@ -651,10 +651,14 @@ PODS:
   - MotionAnimator (2.8.1):
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.5)
   - MaterialComponents
+  - SQLite.swift (~> 0.12.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -665,6 +669,7 @@ SPEC REPOS:
     - MDFTextAccessibility
     - MotionAnimator
     - MotionInterchange
+    - SQLite.swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -674,7 +679,8 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 935e92d8d47fef0a45b83d7ab3a344f8cabc68f7
+PODFILE CHECKSUM: 5884355f9bc4c451ceeb91fd98f54e9251d58ae7
 
 COCOAPODS: 1.5.3

@@ -48,6 +48,9 @@
 		3BFAAB31239D17F000179767 /* GetSpeakers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB30239D17F000179767 /* GetSpeakers.swift */; };
 		3BFAAB33239D186500179767 /* SpeakersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB32239D186500179767 /* SpeakersViewModel.swift */; };
 		3BFAAB35239D1B5500179767 /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB34239D1B5500179767 /* SpeakerCell.swift */; };
+		3BFAAB38239D6F7300179767 /* SessionizeDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB37239D6F7300179767 /* SessionizeDB.swift */; };
+		3BFAAB3C239D85FC00179767 /* SessionsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB3B239D85FC00179767 /* SessionsDao.swift */; };
+		3BFAAB40239D9BA300179767 /* SessionsDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB3F239D9BA300179767 /* SessionsDaoTest.swift */; };
 		63455215F100037000F3F3A6 /* Pods_droidconmadrid19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */; };
 		CB49DACD06E389D1E3F97A5B /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */; };
 /* End PBXBuildFile section */
@@ -118,6 +121,9 @@
 		3BFAAB30239D17F000179767 /* GetSpeakers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeakers.swift; sourceTree = "<group>"; };
 		3BFAAB32239D186500179767 /* SpeakersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewModel.swift; sourceTree = "<group>"; };
 		3BFAAB34239D1B5500179767 /* SpeakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCell.swift; sourceTree = "<group>"; };
+		3BFAAB37239D6F7300179767 /* SessionizeDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeDB.swift; sourceTree = "<group>"; };
+		3BFAAB3B239D85FC00179767 /* SessionsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsDao.swift; sourceTree = "<group>"; };
+		3BFAAB3F239D9BA300179767 /* SessionsDaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsDaoTest.swift; sourceTree = "<group>"; };
 		71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -345,6 +351,7 @@
 		3BBF340A237E10410064C563 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				3BFAAB3D239D9B8D00179767 /* data */,
 				3BBF3420237EB15E0064C563 /* dispatch */,
 				3BBF340B237E10480064C563 /* network */,
 			);
@@ -410,12 +417,38 @@
 		3BFAAB2D239D154F00179767 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				3BFAAB36239D6F6600179767 /* storage */,
 				3B488D7E2370A34E005D0D54 /* network */,
 				3B488D882370D54F005D0D54 /* Either.swift */,
 				3B488D8A2370D5A3005D0D54 /* ApiError.swift */,
 				3BFAAB2E239D156B00179767 /* SessionizeRepository.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		3BFAAB36239D6F6600179767 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB37239D6F7300179767 /* SessionizeDB.swift */,
+				3BFAAB3B239D85FC00179767 /* SessionsDao.swift */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
+		3BFAAB3D239D9B8D00179767 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB3E239D9B9500179767 /* storage */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		3BFAAB3E239D9B9500179767 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB3F239D9BA300179767 /* SessionsDaoTest.swift */,
+			);
+			path = storage;
 			sourceTree = "<group>";
 		};
 		8E0BCCDB98EC216F139F2807 /* Frameworks */ = {
@@ -625,6 +658,7 @@
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -635,6 +669,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -667,9 +702,11 @@
 				3B488D9D2370E666005D0D54 /* ServiceLocator.swift in Sources */,
 				3B488D902370D866005D0D54 /* UITableViewCell+Utils.swift in Sources */,
 				3BBF33EF237D5A950064C563 /* FontStyle.swift in Sources */,
+				3BFAAB38239D6F7300179767 /* SessionizeDB.swift in Sources */,
 				3B488D8D2370D754005D0D54 /* GetSessions.swift in Sources */,
 				3BFAAB2F239D156B00179767 /* SessionizeRepository.swift in Sources */,
 				3B488D4E23709FCA005D0D54 /* AppDelegate.swift in Sources */,
+				3BFAAB3C239D85FC00179767 /* SessionsDao.swift in Sources */,
 				3B488D962370D963005D0D54 /* SessionCell.swift in Sources */,
 				3B488D992370DFC7005D0D54 /* SessionsViewModel.swift in Sources */,
 				3B488D892370D54F005D0D54 /* Either.swift in Sources */,
@@ -682,6 +719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFAAB40239D9BA300179767 /* SessionsDaoTest.swift in Sources */,
 				3BBF3422237EB16C0064C563 /* DispatchingQueuesStubs.swift in Sources */,
 				3BBF340F237E11FA0064C563 /* URLSessionMock.swift in Sources */,
 				3BBF3412237E12800064C563 /* SessionizeApiClientTest.swift in Sources */,

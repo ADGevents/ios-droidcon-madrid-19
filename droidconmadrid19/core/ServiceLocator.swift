@@ -20,18 +20,24 @@ class ServiceLocator {
 	}
 
 	private static func getSpeakers() -> GetSpeakers {
-		return GetSpeakers(sessionizeRepository: sessionizeRepository())
+		return GetSpeakers(sessionizeRepository: sessionizeRepository)
 	}
 	
 	private static func getSessions() -> GetSessions {
-		return GetSessions(sessionizeApiClient: sessionizeApiClient())
+		return GetSessions(sessionizeRepository: sessionizeRepository)
 	}
 
-	private static func sessionizeRepository() -> SessionizeRepository {
-		return SessionizeRepository(sessionizeApiClient: sessionizeApiClient())
-	}
-	
+	private static let sessionizeRepository = SessionizeRepository(sessionizeApiClient: sessionizeApiClient(), sessionsDao: sessionsDao())
+
 	private static func sessionizeApiClient() -> SessionizeApiClient {
 		return SessionizeApiClient(decoder: JSONDecoder(), urlSession: URLSession.shared)
+	}
+
+	private static func sessionsDao() -> SessionsDao {
+		return SessionsDao(sessionizeDb: sessionizeDb())
+	}
+
+	private static func sessionizeDb() -> SQLiteSessionizeDB {
+		return SQLiteSessionizeDB.instance()!
 	}
 }
