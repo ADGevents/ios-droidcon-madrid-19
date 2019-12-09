@@ -30,6 +30,16 @@ extension SessionizeDao {
 	func getSessions() -> Either<SessionizeDaoError, [Session]> {
 		get(fromTable: Sessions.table) { $0.toSession() }
 	}
+
+	func getFavouriteSessions() -> Either<SessionizeDaoError, [Session]> {
+		do {
+			let favouriteSessions = try sessionizeDb.get(table: Sessions.table,
+														 predicate: (Sessions.isStarred == true))
+			return Either.right(favouriteSessions.map { $0.toSession() })
+		} catch {
+			return Either.left(.generic)
+		}
+	}
 	
 	func insertSessions(sessions: [Session]) -> Try<Void> {
 		return insert(intoTable: Sessions.table, values: sessions) { $0.toSetters() }

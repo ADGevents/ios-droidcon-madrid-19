@@ -13,21 +13,28 @@ class SessionViewModel {
 	var sessionUpdatedCallback: () -> Void = {}
 	var session: Session
 
-	private let updateSessionIsStarredValue: UpdateSessionIsStarredValue
+	let isBookmarkingEnabled: Bool
+	private let updateSessionIsStarredValue: UpdateSessionIsStarredValue?
 
 	init(session: Session,
-		 updateSessionIsStarredValue: UpdateSessionIsStarredValue) {
+		 isBookmarkingEnabled: Bool,
+		 updateSessionIsStarredValue: UpdateSessionIsStarredValue? = nil) {
 		self.session = session
+		self.isBookmarkingEnabled = isBookmarkingEnabled
 		self.updateSessionIsStarredValue = updateSessionIsStarredValue
 	}
 }
 
 extension SessionViewModel {
 	func onStarClicked() {
+		guard isBookmarkingEnabled else {
+			return
+		}
+
 		let isStarred = !(session.isStarred ?? false)
 		session = session.copy(isStarred: isStarred)
 		sessionUpdatedCallback()
-		updateSessionIsStarredValue.invoke(sessionId: session.id, isStarred: isStarred)
+		updateSessionIsStarredValue?.invoke(sessionId: session.id, isStarred: isStarred)
 			.fold({ error in
 				session = session.copy(isStarred: !isStarred)
 				sessionUpdatedCallback()

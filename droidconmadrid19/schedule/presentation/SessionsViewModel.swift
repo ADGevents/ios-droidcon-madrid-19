@@ -40,7 +40,9 @@ extension SessionsViewModel {
 				print("Error getting sessions :(")
 			case let .right(sessions):
 				self.sessions = sessions.map {
-					SessionViewModel(session: $0, updateSessionIsStarredValue: self.updateSessionIsStarredValue)
+					SessionViewModel(session: $0,
+									 isBookmarkingEnabled: true,
+									 updateSessionIsStarredValue: self.updateSessionIsStarredValue)
 				}
 			}
 		})

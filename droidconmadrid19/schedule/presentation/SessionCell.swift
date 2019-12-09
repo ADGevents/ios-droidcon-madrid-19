@@ -113,16 +113,23 @@ private extension SessionCell {
 			return
 		}
 
-		bindSession(session: viewModel.session)
-		viewModel.sessionUpdatedCallback = { self.bindSession(session: viewModel.session) }
+		bindSession(session: viewModel.session,
+					isBookmarkingEnabled: viewModel.isBookmarkingEnabled)
+		viewModel.sessionUpdatedCallback = { self.bindSession(session: viewModel.session, isBookmarkingEnabled: viewModel.isBookmarkingEnabled) }
 	}
 
-	func bindSession(session: Session) {
+	func bindSession(session: Session, isBookmarkingEnabled: Bool) {
 		timeView.text = "10:00"
 		timePeriodView.text = "AM"
 		sessionTitleView.text = session.title
 		sessionDescriptionView.text = session.description
 
+		guard isBookmarkingEnabled else {
+			starView.isHidden = true
+			return
+		}
+
+		starView.isHidden = false
 		let isStarred = session.isStarred ?? false
 		bindStarImage(isStarred)
 

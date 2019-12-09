@@ -42,6 +42,10 @@ extension SessionizeRepository {
 		})
 	}
 
+	func getFavouriteSessions(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
+		completion(sessionizeDao.getFavouriteSessions().mapLeft { _ in return .generic})
+	}
+
 	func updateSessionIsStarredValue(sessionId: String, isStarred: Bool) -> Try<Void> {
 		return sessionizeDao.updateSessionStarredValue(sessionId: sessionId, isStarred: isStarred)
 	}

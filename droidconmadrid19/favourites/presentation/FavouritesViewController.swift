@@ -9,15 +9,53 @@
 import UIKit
 
 class FavouritesViewController: UIViewController {
+
+	private lazy var headerView: UIView = {
+		let headerView = UIView()
+		headerView.backgroundColor = .white
+		return headerView
+	}()
+
+	private lazy var sessions: UITableView = {
+		let tableView = UITableView()
+		tableView.dataSource = self
+		SessionCell.register(on: tableView)
+		return tableView
+	}()
+
+	private let favouritesViewModel = ServiceLocator.favouritesViewModel()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpTitle()
+		setUpFavouritesTableView()
+		bindViewModel()
+	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		unbindViewModel()
+		super.viewWillDisappear(animated)
+	}
+}
+
+extension FavouritesViewController: UITableViewDataSource {
+
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return favouritesViewModel.sessions.count
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let sessionCell = SessionCell.dequeueReusableCell(for: indexPath, from: sessions)
+
+		let sessionViewModel = favouritesViewModel.sessions[indexPath.row]
+		sessionCell.sessionViewModel = sessionViewModel
+
+		return sessionCell
 	}
 }
 
 private extension FavouritesViewController {
 	func setUpTitle() {
-		let headerView = UIView()
 		headerView.backgroundColor = .white
 		self.view.addSubview(headerView)
 		
@@ -39,6 +77,26 @@ private extension FavouritesViewController {
 		titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
 		titleLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 0.4).isActive = true
 		titleLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.5).isActive = true
+	}
+
+	func setUpFavouritesTableView() {
+		self.view.addSubview(sessions, constraints: [
+			self.view.bottomAnchor.constraint(equalTo: sessions.bottomAnchor),
+			self.view.leadingAnchor.constraint(equalTo: sessions.leadingAnchor),
+			self.view.trailingAnchor.constraint(equalTo: sessions.trailingAnchor),
+			self.headerView.bottomAnchor.constraint(equalTo: sessions.topAnchor)
+		])
+	}
+}
+
+private extension FavouritesViewController {
+	func bindViewModel() {
+		favouritesViewModel.sessionsUpdatedCallback = sessions.reloadData
+		favouritesViewModel.onFavouritesVisible()
+	}
+
+	func unbindViewModel() {
+		favouritesViewModel.sessionsUpdatedCallback = {}
 	}
 }
 

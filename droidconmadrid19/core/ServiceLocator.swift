@@ -14,10 +14,19 @@ class ServiceLocator {
 		return SpeakersViewModel(getSpeakers: getSpeakers(), mainDispatching: AsyncQueue.main)
 	}
 	
+	static func favouritesViewModel() -> FavouritesViewModel {
+		return FavouritesViewModel(getFavouriteSessions: getFavouriteSession(),
+								   mainDispatching: AsyncQueue.main)
+	}
+	
 	static func sessionsViewModel() -> SessionsViewModel {
 		return SessionsViewModel(getSessions: getSessions(),
 								 mainDispatching: AsyncQueue.main,
 								 updateSessionIsStarredValue: updateSessionIsStarredValue())
+	}
+	
+	private static func getFavouriteSession() -> GetFavouriteSessions {
+		return GetFavouriteSessions(sessionizeRepository: sessionizeRepository)
 	}
 	
 	private static func getSpeakers() -> GetSpeakers {

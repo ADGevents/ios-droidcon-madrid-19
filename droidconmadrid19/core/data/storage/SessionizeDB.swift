@@ -111,6 +111,10 @@ extension SQLiteSessionizeDB {
 		return try connection?.prepare(table).map { $0 } ?? []
 	}
 
+	func get(table: Table, predicate: Expression<Bool>) throws -> [Row] {
+		return try connection?.prepare(table.filter(predicate)).map { $0 } ?? []
+	}
+
 	func insert(table: Table, setters: [SQLite.Setter]) throws {
 		try connection?.run(table.insert(setters))
 	}
