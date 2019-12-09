@@ -8,28 +8,11 @@
 
 import Foundation
 import SQLite
+import Bow
 
 enum SessionsDaoError {
 	case generic
 	case dbNotAvailable
-}
-
-extension Row {
-	func toSession() -> Session {
-		return Session(id: self[Sessions.id],
-					   title: self[Sessions.title],
-					   description: self[Sessions.description],
-					   room: self[Sessions.roomName])
-	}
-}
-
-extension Session {
-	func toSetters() -> [SQLite.Setter] {
-		return [Sessions.id <- self.id,
-				Sessions.title <- self.title,
-				Sessions.description <- self.description,
-				Sessions.roomName <- self.room]
-	}
 }
 
 class SessionsDao {
@@ -52,16 +35,13 @@ extension SessionsDao {
 		}
 	}
 	
-	func insert(sessions: [Session]) -> Bool {
-		do {
+	func insert(sessions: [Session]) -> Try<Void> {
+		return Try.invoke {
 			try sessionizeDb.transaction {
 				for session in sessions {
 					try sessionizeDb.insert(table: Sessions.table, setters: session.toSetters())
 				}
 			}
-			return true
-		} catch {
-			return false
 		}
 	}
 }

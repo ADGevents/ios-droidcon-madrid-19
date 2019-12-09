@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - Bow (0.6.0)
   - MaterialComponents (94.2.0):
     - MaterialComponents/ActionSheet (= 94.2.0)
     - "MaterialComponents/ActionSheet+Theming (= 94.2.0)"
@@ -657,6 +658,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.5)
+  - Bow (~> 0.6.0)
   - MaterialComponents
   - SQLite.swift (~> 0.12.0)
 
@@ -664,6 +666,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - Bow
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -674,6 +677,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  Bow: 2a42ff7c2b0bf72a2f16491aff170e5069b3ebe6
   MaterialComponents: ddaf6964e9bc429fc228fa46344e406c976cd85c
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -681,6 +685,6 @@ SPEC CHECKSUMS:
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 5884355f9bc4c451ceeb91fd98f54e9251d58ae7
+PODFILE CHECKSUM: fef6963df76e885b6b970aeead3559032c7de2cd
 
 COCOAPODS: 1.5.3

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Bow
+import os
 
 enum SessionizeError {
 	case generic
@@ -50,7 +52,10 @@ private extension SessionizeRepository {
 	func getSessionsFromApi(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
 		sessionizeApiClient.getSessions { getSessionsResult in
 			getSessionsResult.run { sessions in
-				self.sessionsDao.insert(sessions: sessions)
+				self.sessionsDao.insert(sessions: sessions).fold(
+					{ error in os_log("Error inserting sessions...") },
+					{ os_log("Sessions inserted successfully") }
+				)
 			}
 			completion(getSessionsResult.mapLeft { _ in
 				return SessionizeError.generic
