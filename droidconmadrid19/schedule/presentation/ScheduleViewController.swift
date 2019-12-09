@@ -32,11 +32,6 @@ class ScheduleViewController: UIViewController {
 		setUpScheduleTableView()
 		bindViewModel()
 	}
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		unbindViewModel()
-		super.viewWillDisappear(animated)
-	}
 }
 
 extension ScheduleViewController: UITableViewDelegate {
@@ -99,11 +94,6 @@ private extension ScheduleViewController {
 	func bindViewModel() {
 		sessionsViewModel.sessionsUpdatedCallback = sessions.reloadData
 		sessionsViewModel.onSessionsVisible()
-	}
-	
-	func unbindViewModel() {
-		sessionsViewModel.sessionsUpdatedCallback = {}
-		sessionsViewModel.onSessionsGone()
 	}
 }
 

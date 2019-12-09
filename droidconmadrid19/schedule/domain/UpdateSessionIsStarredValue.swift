@@ -10,16 +10,15 @@ import Foundation
 import Bow
 
 class UpdateSessionIsStarredValue {
-	private let sessionizeRepository: SessionizeRepository
+	private let sessionsBusinessLogic: SessionsBusinessLogic
 
-	init(sessionizeRepository: SessionizeRepository) {
-		self.sessionizeRepository = sessionizeRepository
+	init(sessionsBusinessLogic: SessionsBusinessLogic) {
+		self.sessionsBusinessLogic = sessionsBusinessLogic
 	}
 }
 
 extension UpdateSessionIsStarredValue {
-	func invoke(sessionId: String, isStarred: Bool) -> Try<Void> {
-		return sessionizeRepository.updateSessionIsStarredValue(sessionId: sessionId,
-																isStarred: isStarred)
+	func invoke(sessionId: String, isStarred: Bool) {
+		sessionsBusinessLogic.updateStarredValue(sessionId: sessionId, isStarred: isStarred)
 	}
 }

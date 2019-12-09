@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class FavouritesViewModel {
+
+	private let disposeBag = DisposeBag()
 
 	var sessions: [SessionViewModel] = [] {
 		didSet {
@@ -31,11 +34,9 @@ class FavouritesViewModel {
 
 extension FavouritesViewModel {
 	func onFavouritesVisible() {
-		getFavouriteSessions.invoke { getFavouritesResult in
-			getFavouritesResult.fold(
-				leftBy: { _ in },
-				rightBy: { self.onGetFavouritesSuccess(sessions: $0)})
-		}
+		getFavouriteSessions.invoke().subscribe(onNext:{
+			self.onGetFavouritesSuccess(sessions: $0)
+		}).disposed(by: disposeBag)
 	}
 }
 

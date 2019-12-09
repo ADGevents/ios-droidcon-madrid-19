@@ -26,7 +26,7 @@ class ServiceLocator {
 	}
 	
 	private static func getFavouriteSession() -> GetFavouriteSessions {
-		return GetFavouriteSessions(sessionizeRepository: sessionizeRepository)
+		return GetFavouriteSessions(sessionsBusinessLogic: sessionsBusinessLogic)
 	}
 	
 	private static func getSpeakers() -> GetSpeakers {
@@ -34,11 +34,13 @@ class ServiceLocator {
 	}
 	
 	private static func getSessions() -> GetSessions {
-		return GetSessions(sessionizeRepository: sessionizeRepository)
+		return GetSessions(sessionsBusinessLogic: sessionsBusinessLogic)
 	}
 	
 	private static let sessionizeRepository = SessionizeRepository(sessionizeApiClient: sessionizeApiClient(),
 																   sessionizeDao: sessionizeDao())
+
+	private static let sessionsBusinessLogic = SessionsBusinessLogic(sessionizeRepository: sessionizeRepository)
 	
 	private static func sessionizeApiClient() -> SessionizeApiClient {
 		return SessionizeApiClient(decoder: JSONDecoder(), urlSession: URLSession.shared)
@@ -53,6 +55,6 @@ class ServiceLocator {
 	}
 	
 	private static func updateSessionIsStarredValue() -> UpdateSessionIsStarredValue {
-		return UpdateSessionIsStarredValue(sessionizeRepository: sessionizeRepository)
+		return UpdateSessionIsStarredValue(sessionsBusinessLogic: sessionsBusinessLogic)
 	}
 }

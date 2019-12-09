@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class SessionsViewModel {
+
+	private let disposeBag = DisposeBag()
 	
 	var sessions: [SessionViewModel] = [] {
 		didSet {
@@ -34,18 +37,13 @@ class SessionsViewModel {
 
 extension SessionsViewModel {
 	func onSessionsVisible() {
-		getSessions.invoke(completion: {result in
-			switch(result) {
-			case .left:
-				print("Error getting sessions :(")
-			case let .right(sessions):
-				self.sessions = sessions.map {
-					SessionViewModel(session: $0,
-									 isBookmarkingEnabled: true,
-									 updateSessionIsStarredValue: self.updateSessionIsStarredValue)
-				}
+		getSessions.invoke().subscribe(onNext:{ sessions in
+			self.sessions = sessions.map {
+				SessionViewModel(session: $0,
+								 isBookmarkingEnabled: true,
+								 updateSessionIsStarredValue: self.updateSessionIsStarredValue)
 			}
-		})
+		}).disposed(by: disposeBag)
 	}
 	
 	func onSessionsGone() {

@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import RxSwift
 
 class GetSessions {
 	
-	private let sessionizeRepository: SessionizeRepository
+	private let sessionsBusinessLogic: SessionsBusinessLogic
 	
-	init(sessionizeRepository: SessionizeRepository) {
-		self.sessionizeRepository = sessionizeRepository
+	init(sessionsBusinessLogic: SessionsBusinessLogic) {
+		self.sessionsBusinessLogic = sessionsBusinessLogic
 	}
 }
 
 extension GetSessions {
 	
-	func invoke(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
-		sessionizeRepository.getSessions(completion: completion)
+	func invoke() -> Observable<[Session]> {
+		return sessionsBusinessLogic.getAll()
 	}
 }

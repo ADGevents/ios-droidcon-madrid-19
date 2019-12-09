@@ -31,11 +31,6 @@ class FavouritesViewController: UIViewController {
 		setUpFavouritesTableView()
 		bindViewModel()
 	}
-
-	override func viewWillDisappear(_ animated: Bool) {
-		unbindViewModel()
-		super.viewWillDisappear(animated)
-	}
 }
 
 extension FavouritesViewController: UITableViewDataSource {
@@ -93,10 +88,6 @@ private extension FavouritesViewController {
 	func bindViewModel() {
 		favouritesViewModel.sessionsUpdatedCallback = sessions.reloadData
 		favouritesViewModel.onFavouritesVisible()
-	}
-
-	func unbindViewModel() {
-		favouritesViewModel.sessionsUpdatedCallback = {}
 	}
 }
 

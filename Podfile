@@ -6,6 +6,8 @@ target 'droidconmadrid19' do
   pod 'AlamofireImage', '~> 3.5'
   pod 'SQLite.swift', '~> 0.12.0'
   pod 'Bow', '~> 0.6.0'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
 
   target 'droidconmadrid19Tests' do
 	  use_frameworks!

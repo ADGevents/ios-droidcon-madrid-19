@@ -32,13 +32,7 @@ extension SessionViewModel {
 		}
 
 		let isStarred = !(session.isStarred ?? false)
-		session = session.copy(isStarred: isStarred)
-		sessionUpdatedCallback()
 		updateSessionIsStarredValue?.invoke(sessionId: session.id, isStarred: isStarred)
-			.fold({ error in
-				session = session.copy(isStarred: !isStarred)
-				sessionUpdatedCallback()
-			}, {success in })
 	}
 }
 

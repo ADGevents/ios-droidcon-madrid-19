@@ -56,6 +56,7 @@
 		3BFAAB48239EB7FA00179767 /* UpdateSessionIsStarredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */; };
 		3BFAAB4B239ED79A00179767 /* GetFavouriteSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB4A239ED79A00179767 /* GetFavouriteSessions.swift */; };
 		3BFAAB4D239ED9EF00179767 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB4C239ED9EF00179767 /* FavouritesViewModel.swift */; };
+		3BFAAB50239EF05E00179767 /* SessionsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB4F239EF05E00179767 /* SessionsBusinessLogic.swift */; };
 		63455215F100037000F3F3A6 /* Pods_droidconmadrid19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2177693117B25C1FC2D2068 /* Pods_droidconmadrid19Tests.framework */; };
 		CB49DACD06E389D1E3F97A5B /* Pods_droidconmadrid19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */; };
 /* End PBXBuildFile section */
@@ -134,6 +135,7 @@
 		3BFAAB47239EB7FA00179767 /* UpdateSessionIsStarredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSessionIsStarredValue.swift; sourceTree = "<group>"; };
 		3BFAAB4A239ED79A00179767 /* GetFavouriteSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouriteSessions.swift; sourceTree = "<group>"; };
 		3BFAAB4C239ED9EF00179767 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
+		3BFAAB4F239EF05E00179767 /* SessionsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsBusinessLogic.swift; sourceTree = "<group>"; };
 		71B486590870D49875354E07 /* Pods_droidconmadrid19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_droidconmadrid19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		857DCA632E2FD80AC76475CB /* Pods-droidconmadrid19Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A166CA788250CFB1E8303C48 /* Pods-droidconmadrid19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-droidconmadrid19Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-droidconmadrid19Tests/Pods-droidconmadrid19Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 		3B488D872370D53A005D0D54 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				3BFAAB4E239EF04F00179767 /* domain */,
 				3BFAAB2D239D154F00179767 /* data */,
 				3BBF341D237EAF920064C563 /* dispatch */,
 				3B488D8E2370D850005D0D54 /* ui */,
@@ -462,6 +465,14 @@
 			isa = PBXGroup;
 			children = (
 				3BFAAB4A239ED79A00179767 /* GetFavouriteSessions.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		3BFAAB4E239EF04F00179767 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAAB4F239EF05E00179767 /* SessionsBusinessLogic.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -674,6 +685,9 @@
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -686,6 +700,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +729,7 @@
 				3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */,
 				3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */,
 				3BBF33FB237D8AFA0064C563 /* HomeViewController.swift in Sources */,
+				3BFAAB50239EF05E00179767 /* SessionsBusinessLogic.swift in Sources */,
 				3BFAAB31239D17F000179767 /* GetSpeakers.swift in Sources */,
 				3BBF3404237DC2B40064C563 /* SpeakersViewController.swift in Sources */,
 				3B488D5023709FCA005D0D54 /* ScheduleViewController.swift in Sources */,

@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
 class GetFavouriteSessions {
-	private let sessionizeRepository: SessionizeRepository
+	private let sessionsBusinessLogic: SessionsBusinessLogic
 
-	init(sessionizeRepository: SessionizeRepository) {
-		self.sessionizeRepository = sessionizeRepository
+	init(sessionsBusinessLogic: SessionsBusinessLogic) {
+		self.sessionsBusinessLogic = sessionsBusinessLogic
 	}
 }
 
 extension GetFavouriteSessions {
 
-	func invoke(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
-		sessionizeRepository.getFavouriteSessions(completion: completion)
+	func invoke() -> Observable<[Session]> {
+		return sessionsBusinessLogic.getFavourites()
 	}
 }
