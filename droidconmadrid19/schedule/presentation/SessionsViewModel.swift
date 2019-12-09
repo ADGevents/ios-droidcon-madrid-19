@@ -10,7 +10,7 @@ import Foundation
 
 class SessionsViewModel {
 	
-	var sessionsModel: [SessionModel] = [] {
+	var sessions: [SessionViewModel] = [] {
 		didSet {
 			mainDispatching.dispatch { [weak self] in
 				self?.sessionsUpdatedCallback()
@@ -36,15 +36,7 @@ extension SessionsViewModel {
 			case .left:
 				print("Error getting sessions :(")
 			case let .right(sessions):
-				let sessionsModel = sessions.map { session in
-						return SessionModel(title: session.title,
-											description: session.description ?? "",
-											category: "random",
-											time: "10:00",
-											timePeriod: "PM")
-				}
-				
-				self.sessionsModel = sessionsModel
+				self.sessions = sessions.map { SessionViewModel(session: $0) }
 			}
 		})
 	}

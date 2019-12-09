@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents
 
 class SessionCell: UITableViewCell {
 	
@@ -44,6 +45,22 @@ class SessionCell: UITableViewCell {
 		label.lineBreakMode = .byWordWrapping
 		return label
 	}()
+
+	private lazy var starView: MDCButton = {
+		let star = MDCFlatButton()
+		star.heightAnchor.constraint(equalToConstant: 60).isActive = true
+		star.widthAnchor.constraint(equalToConstant: 60).isActive = true
+		star.contentEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+		return star
+	}()
+	
+	var sessionViewModel: SessionViewModel? {
+		didSet {
+			bindViewModel()
+		}
+	}
+
+	var onStarClickedCallback: ((String, Bool) -> Void)?
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -63,7 +80,7 @@ extension SessionCell {
 		timeTextStackView.axis = .vertical
 		timeTextStackView.alignment = .center
 		timeTextStackView.spacing = 0
-		timeTextStackView.widthAnchor.constraint(equalToConstant: 55).isActive = true
+		timeTextStackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
 		
 		let sessionInfoStackView = UIStackView(arrangedSubviews: [sessionTitleView,
 																  sessionDescriptionView])
@@ -77,22 +94,57 @@ extension SessionCell {
 			timeTextStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16)
 		])
 
+		addSubview(starView, constraints: [
+			starView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
+			starView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+		])
+
 		addSubview(sessionInfoStackView, constraints: [
 			sessionInfoStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
 			sessionInfoStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
 			timeTextStackView.trailingAnchor.constraint(equalTo: sessionInfoStackView.leadingAnchor, constant: -16),
-			sessionInfoStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
+			sessionInfoStackView.trailingAnchor.constraint(equalTo: starView.leadingAnchor, constant: 0)
 		])
-		
 	}
 }
 
-extension SessionCell {
+private extension SessionCell {
 	
-	func bind(_ session: SessionModel) {
-		timeView.text = session.time
-		timePeriodView.text = session.timePeriod
+	func bindViewModel() {
+		guard let viewModel = sessionViewModel else {
+			return
+		}
+
+		let session = viewModel.session
+
+		timeView.text = "10:00"
+		timePeriodView.text = "AM"
 		sessionTitleView.text = session.title
 		sessionDescriptionView.text = session.description
+
+		let isStarred = session.isStarred ?? false
+
+		let singleTap = UITapGestureRecognizer(target: self, action: #selector(onStarClicked))
+		starView.isUserInteractionEnabled = true
+		starView.addGestureRecognizer(singleTap)
+		updateStarImage(isStarred)
+	}
+
+	private func updateStarImage(_ isStarred: Bool) {
+		if (isStarred) {
+			starView.setImage(UIImage(named: "ic_star_filled"), for: .normal)
+		} else {
+			starView.setImage(UIImage(named: "ic_star_empty"), for: .normal)
+		}
+	}
+
+	@objc func onStarClicked() {
+		print("star clicked")
+		guard let viewModel = sessionViewModel else {
+			return
+		}
+
+		viewModel.onStarClicked()
+		updateStarImage(viewModel.session.isStarred ?? false)
 	}
 }

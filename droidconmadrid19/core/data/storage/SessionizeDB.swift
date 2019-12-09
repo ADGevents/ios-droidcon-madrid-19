@@ -79,7 +79,7 @@ private extension SQLiteSessionizeDB {
 			// table.column(Sessions.isPlenumSession)
 			// table.column(Sessions.roomId)
 			table.column(Sessions.roomName)
-			// table.column(Sessions.isStarred)
+			table.column(Sessions.isStarred)
 		})
 	}
 

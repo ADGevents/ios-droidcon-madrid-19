@@ -13,7 +13,8 @@ extension Row {
 		return Session(id: self[Sessions.id],
 					   title: self[Sessions.title],
 					   description: self[Sessions.description],
-					   room: self[Sessions.roomName])
+					   room: self[Sessions.roomName],
+					   isStarred: self[Sessions.isStarred])
 	}
 	
 	
@@ -40,7 +41,8 @@ extension Session {
 		return [Sessions.id <- self.id,
 				Sessions.title <- self.title,
 				Sessions.description <- self.description,
-				Sessions.roomName <- self.room]
+				Sessions.roomName <- self.room,
+				Sessions.isStarred <- self.isStarred ?? false]
 	}
 }
 

@@ -19,7 +19,7 @@ class Sessions {
 	// static let isPlenumSession = Expression<Bool>("isPlenumSession")
 	// static let roomId = Expression<Int>("roomId")
 	static let roomName = Expression<String>("roomName")
-	// static let isStarred = Expression<Bool>("isStarred")
+	static let isStarred = Expression<Bool>("isStarred")
 }
 
 class Speakers {

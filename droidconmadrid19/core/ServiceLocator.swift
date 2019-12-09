@@ -27,7 +27,8 @@ class ServiceLocator {
 		return GetSessions(sessionizeRepository: sessionizeRepository)
 	}
 
-	private static let sessionizeRepository = SessionizeRepository(sessionizeApiClient: sessionizeApiClient(), sessionizeDao: sessionizeDao())
+	private static let sessionizeRepository = SessionizeRepository(sessionizeApiClient: sessionizeApiClient(),
+																   sessionizeDao: sessionizeDao())
 
 	private static func sessionizeApiClient() -> SessionizeApiClient {
 		return SessionizeApiClient(decoder: JSONDecoder(), urlSession: URLSession.shared)

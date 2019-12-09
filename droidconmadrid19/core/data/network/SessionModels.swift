@@ -13,4 +13,5 @@ struct Session: Codable, Equatable {
 	let title: String
 	let description: String?
 	let room: String
+	let isStarred: Bool?
 }
