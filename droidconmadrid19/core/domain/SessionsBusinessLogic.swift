@@ -27,7 +27,7 @@ class SessionsBusinessLogic {
 					leftBy: {_ in self.fetchingSessions = false },
 					rightBy:  { sessions in
 						self.fetchingSessions = false
-						self.sessions = sessions
+						self.sessions = sessions.map { $0.toDomainModel() }
 				})
 			}
 		}

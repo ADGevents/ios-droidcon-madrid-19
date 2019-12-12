@@ -27,21 +27,21 @@ class SessionizeDao {
 // MARK: Sessions
 
 extension SessionizeDao {
-	func getSessions() -> Either<SessionizeDaoError, [Session]> {
-		get(fromTable: Sessions.table) { $0.toSession() }
+	func getSessions() -> Either<SessionizeDaoError, [SessionData]> {
+		get(fromTable: Sessions.table) { $0.toSessionData() }
 	}
 
-	func getFavouriteSessions() -> Either<SessionizeDaoError, [Session]> {
+	func getFavouriteSessions() -> Either<SessionizeDaoError, [SessionData]> {
 		do {
 			let favouriteSessions = try sessionizeDb.get(table: Sessions.table,
 														 predicate: (Sessions.isStarred == true))
-			return Either.right(favouriteSessions.map { $0.toSession() })
+			return Either.right(favouriteSessions.map { $0.toSessionData() })
 		} catch {
 			return Either.left(.generic)
 		}
 	}
 	
-	func insertSessions(sessions: [Session]) -> Try<Void> {
+	func insertSessions(sessions: [SessionData]) -> Try<Void> {
 		return insert(intoTable: Sessions.table, values: sessions) { $0.toSetters() }
 	}
 

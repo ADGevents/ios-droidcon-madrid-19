@@ -30,7 +30,7 @@ class SessionizeRepository {
 
 extension SessionizeRepository {
 
-	func getSessions(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
+	func getSessions(completion: @escaping (Either<SessionizeError, [SessionData]>) -> Void) {
 		sessionizeDao.getSessions().fold(leftBy: { error in
 			getSessionsFromApi(completion: completion)
 		}, rightBy: { storedSessions in
@@ -42,7 +42,7 @@ extension SessionizeRepository {
 		})
 	}
 
-	func getFavouriteSessions(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
+	func getFavouriteSessions(completion: @escaping (Either<SessionizeError, [SessionData]>) -> Void) {
 		completion(sessionizeDao.getFavouriteSessions().mapLeft { _ in return .generic})
 	}
 
@@ -50,7 +50,7 @@ extension SessionizeRepository {
 		return sessionizeDao.updateSessionStarredValue(sessionId: sessionId, isStarred: isStarred)
 	}
 
-	private func getSessionsFromApi(completion: @escaping (Either<SessionizeError, [Session]>) -> Void) {
+	private func getSessionsFromApi(completion: @escaping (Either<SessionizeError, [SessionData]>) -> Void) {
 		sessionizeApiClient.getSessions { getSessionsResult in
 			getSessionsResult.run { sessions in
 				self.sessionizeDao.insertSessions(sessions: sessions).fold(

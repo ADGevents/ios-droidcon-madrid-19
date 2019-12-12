@@ -9,12 +9,14 @@
 import SQLite
 
 extension Row {
-	func toSession() -> Session {
-		return Session(id: self[Sessions.id],
+	func toSessionData() -> SessionData {
+		return SessionData(id: self[Sessions.id],
 					   title: self[Sessions.title],
 					   description: self[Sessions.description],
 					   room: self[Sessions.roomName],
-					   isStarred: self[Sessions.isStarred])
+					   isStarred: self[Sessions.isStarred],
+					   startsAt: self[Sessions.startsAt],
+					   endsAt: self[Sessions.endsAt])
 	}
 	
 	
@@ -36,7 +38,7 @@ extension Row {
 	}
 }
 
-extension Session {
+extension SessionData {
 	func toSetters() -> [SQLite.Setter] {
 		return [Sessions.id <- self.id,
 				Sessions.title <- self.title,

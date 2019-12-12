@@ -23,7 +23,7 @@ class SessionizeApiClient {
 
 extension SessionizeApiClient {
 	
-	func getSessions(completion: @escaping (Either<ApiError, [Session]>) -> Void) {
+	func getSessions(completion: @escaping (Either<ApiError, [SessionData]>) -> Void) {
 		get(rawUrl: "\(SessionizeApiClient.sessionizeApiEndpoint)/sessions", completion: completion)
 	}
 	

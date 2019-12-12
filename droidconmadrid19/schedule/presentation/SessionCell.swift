@@ -78,7 +78,7 @@ extension SessionCell {
 		timeTextStackView.axis = .vertical
 		timeTextStackView.alignment = .center
 		timeTextStackView.spacing = 0
-		timeTextStackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+		timeTextStackView.widthAnchor.constraint(equalToConstant: 60).isActive = true
 		
 		let sessionInfoStackView = UIStackView(arrangedSubviews: [sessionTitleView,
 																  sessionDescriptionView])
@@ -119,7 +119,7 @@ private extension SessionCell {
 	}
 
 	func bindSession(session: Session, isBookmarkingEnabled: Bool) {
-		timeView.text = "10:00"
+		timeView.text = session.startsAt.toDayAndHour()
 		timePeriodView.text = "AM"
 		sessionTitleView.text = session.title
 		sessionDescriptionView.text = session.description

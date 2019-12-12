@@ -14,7 +14,7 @@
 		3B488D5823709FCC005D0D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B488D5623709FCC005D0D54 /* LaunchScreen.storyboard */; };
 		3B488D6E23709FCC005D0D54 /* droidconmadrid19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */; };
 		3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */; };
-		3B488D862370D1E7005D0D54 /* SessionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D852370D1E7005D0D54 /* SessionModels.swift */; };
+		3B488D862370D1E7005D0D54 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D852370D1E7005D0D54 /* Session.swift */; };
 		3B488D892370D54F005D0D54 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D882370D54F005D0D54 /* Either.swift */; };
 		3B488D8B2370D5A3005D0D54 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D8A2370D5A3005D0D54 /* ApiError.swift */; };
 		3B488D8D2370D754005D0D54 /* GetSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B488D8C2370D754005D0D54 /* GetSessions.swift */; };
@@ -43,6 +43,8 @@
 		3BBF342D237EBAC70064C563 /* GetSpeakersValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF342C237EBAC70064C563 /* GetSpeakersValidResponse.json */; };
 		3BBF3431237EBAEC0064C563 /* GetSpeakersInvalidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BBF3430237EBAEC0064C563 /* GetSpeakersInvalidResponse.json */; };
 		3BBF3433237EBB0B0064C563 /* GetSpeakersStubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */; };
+		3BD612C923A23066005B67A2 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD612C823A23066005B67A2 /* SessionData.swift */; };
+		3BD612CE23A235F3005B67A2 /* SessionMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD612CD23A235F3005B67A2 /* SessionMappers.swift */; };
 		3BFAAB2F239D156B00179767 /* SessionizeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB2E239D156B00179767 /* SessionizeRepository.swift */; };
 		3BFAAB31239D17F000179767 /* GetSpeakers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB30239D17F000179767 /* GetSpeakers.swift */; };
 		3BFAAB33239D186500179767 /* SpeakersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAAB32239D186500179767 /* SpeakersViewModel.swift */; };
@@ -93,7 +95,7 @@
 		3B488D6D23709FCC005D0D54 /* droidconmadrid19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = droidconmadrid19UITests.swift; sourceTree = "<group>"; };
 		3B488D6F23709FCC005D0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeApiClient.swift; sourceTree = "<group>"; };
-		3B488D852370D1E7005D0D54 /* SessionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModels.swift; sourceTree = "<group>"; };
+		3B488D852370D1E7005D0D54 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		3B488D882370D54F005D0D54 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		3B488D8A2370D5A3005D0D54 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		3B488D8C2370D754005D0D54 /* GetSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessions.swift; sourceTree = "<group>"; };
@@ -122,6 +124,8 @@
 		3BBF342C237EBAC70064C563 /* GetSpeakersValidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSpeakersValidResponse.json; sourceTree = "<group>"; };
 		3BBF3430237EBAEC0064C563 /* GetSpeakersInvalidResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSpeakersInvalidResponse.json; sourceTree = "<group>"; };
 		3BBF3432237EBB0B0064C563 /* GetSpeakersStubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeakersStubResponse.swift; sourceTree = "<group>"; };
+		3BD612C823A23066005B67A2 /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		3BD612CD23A235F3005B67A2 /* SessionMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMappers.swift; sourceTree = "<group>"; };
 		3BFAAB2E239D156B00179767 /* SessionizeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionizeRepository.swift; sourceTree = "<group>"; };
 		3BFAAB30239D17F000179767 /* GetSpeakers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSpeakers.swift; sourceTree = "<group>"; };
 		3BFAAB32239D186500179767 /* SpeakersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewModel.swift; sourceTree = "<group>"; };
@@ -261,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				3B488D7F2370A35E005D0D54 /* SessionizeApiClient.swift */,
-				3B488D852370D1E7005D0D54 /* SessionModels.swift */,
 				3BBF3408237E0C140064C563 /* SpeakerModels.swift */,
 			);
 			path = network;
@@ -299,6 +302,7 @@
 				3B488D942370D963005D0D54 /* SessionCell.swift */,
 				3B488D982370DFC7005D0D54 /* SessionsViewModel.swift */,
 				3BFAAB45239EA34000179767 /* SessionViewModel.swift */,
+				3BD612CD23A235F3005B67A2 /* SessionMappers.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -414,6 +418,14 @@
 			path = responses;
 			sourceTree = "<group>";
 		};
+		3BD612CA23A23125005B67A2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3BD612C823A23066005B67A2 /* SessionData.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		3BFAAB2C239D153E00179767 /* domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +437,7 @@
 		3BFAAB2D239D154F00179767 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				3BD612CA23A23125005B67A2 /* model */,
 				3BFAAB36239D6F6600179767 /* storage */,
 				3B488D7E2370A34E005D0D54 /* network */,
 				3B488D882370D54F005D0D54 /* Either.swift */,
@@ -472,6 +485,7 @@
 		3BFAAB4E239EF04F00179767 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				3B488D852370D1E7005D0D54 /* Session.swift */,
 				3BFAAB4F239EF05E00179767 /* SessionsBusinessLogic.swift */,
 			);
 			path = domain;
@@ -720,12 +734,13 @@
 				3BFAAB35239D1B5500179767 /* SpeakerCell.swift in Sources */,
 				3BBF33F3237D5B250064C563 /* Fonts.swift in Sources */,
 				3BBF341F237EAFA20064C563 /* DispatchingQueues.swift in Sources */,
-				3B488D862370D1E7005D0D54 /* SessionModels.swift in Sources */,
+				3B488D862370D1E7005D0D54 /* Session.swift in Sources */,
 				3BBF33F1237D5ACF0064C563 /* FontSize.swift in Sources */,
 				3BBF3409237E0C140064C563 /* SpeakerModels.swift in Sources */,
 				3BBF33F5237D64120064C563 /* Colors.swift in Sources */,
 				3BFAAB46239EA34000179767 /* SessionViewModel.swift in Sources */,
 				3BFAAB33239D186500179767 /* SpeakersViewModel.swift in Sources */,
+				3BD612CE23A235F3005B67A2 /* SessionMappers.swift in Sources */,
 				3B488D802370A35E005D0D54 /* SessionizeApiClient.swift in Sources */,
 				3BBF33FF237DBE490064C563 /* FavouritesViewController.swift in Sources */,
 				3BBF33FB237D8AFA0064C563 /* HomeViewController.swift in Sources */,
@@ -747,6 +762,7 @@
 				3BFAAB4D239ED9EF00179767 /* FavouritesViewModel.swift in Sources */,
 				3B488D4E23709FCA005D0D54 /* AppDelegate.swift in Sources */,
 				3BFAAB3C239D85FC00179767 /* SessionizeDao.swift in Sources */,
+				3BD612C923A23066005B67A2 /* SessionData.swift in Sources */,
 				3B488D962370D963005D0D54 /* SessionCell.swift in Sources */,
 				3B488D992370DFC7005D0D54 /* SessionsViewModel.swift in Sources */,
 				3B488D892370D54F005D0D54 /* Either.swift in Sources */,

@@ -9,13 +9,13 @@
 import Foundation
 
 class SessionViewModel {
-
+	
 	var sessionUpdatedCallback: () -> Void = {}
 	var session: Session
-
+	
 	let isBookmarkingEnabled: Bool
 	private let updateSessionIsStarredValue: UpdateSessionIsStarredValue?
-
+	
 	init(session: Session,
 		 isBookmarkingEnabled: Bool,
 		 updateSessionIsStarredValue: UpdateSessionIsStarredValue? = nil) {
@@ -30,7 +30,7 @@ extension SessionViewModel {
 		guard isBookmarkingEnabled else {
 			return
 		}
-
+		
 		let isStarred = !(session.isStarred ?? false)
 		updateSessionIsStarredValue?.invoke(sessionId: session.id, isStarred: isStarred)
 	}
@@ -42,6 +42,8 @@ extension Session {
 					   title: self.title,
 					   description: self.description,
 					   room: self.room,
-					   isStarred: isStarred)
+					   isStarred: isStarred,
+					   startsAt: self.startsAt,
+					   endsAt: self.endsAt)
 	}
 }
