@@ -11,12 +11,12 @@ import SQLite
 extension Row {
 	func toSessionData() -> SessionData {
 		return SessionData(id: self[Sessions.id],
-					   title: self[Sessions.title],
-					   description: self[Sessions.description],
-					   room: self[Sessions.roomName],
-					   isStarred: self[Sessions.isStarred],
-					   startsAt: self[Sessions.startsAt],
-					   endsAt: self[Sessions.endsAt])
+						   title: self[Sessions.title],
+						   description: self[Sessions.description],
+						   room: self[Sessions.roomName],
+						   isStarred: self[Sessions.isStarred],
+						   startsAt: self[Sessions.startsAt],
+						   endsAt: self[Sessions.endsAt])
 	}
 	
 	
@@ -44,7 +44,9 @@ extension SessionData {
 				Sessions.title <- self.title,
 				Sessions.description <- self.description,
 				Sessions.roomName <- self.room,
-				Sessions.isStarred <- self.isStarred ?? false]
+				Sessions.isStarred <- self.isStarred ?? false,
+				Sessions.startsAt <- self.startsAt,
+				Sessions.endsAt <- self.endsAt]
 	}
 }
 

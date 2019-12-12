@@ -24,13 +24,20 @@ extension SessionData {
 		dateFormatter.locale = Locale(identifier: "es_ES")
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
 
+		let startsAtDate = dateFormatter.date(from: self.startsAt)!
+		let endsAtDate = dateFormatter.date(from: self.endsAt)!
+
+		let talkDurationInSeconds = endsAtDate.timeIntervalSince(startsAtDate)
+		let talkDurationInMinutes = Int(talkDurationInSeconds / 60)
+		let description = "\(talkDurationInMinutes) min / \(self.room)"
+
 		return Session(id: self.id,
 					   title: self.title,
-					   description: self.description,
+					   description: description,
 					   room: self.room,
 					   isStarred: self.isStarred,
-					   startsAt: dateFormatter.date(from: self.startsAt)!,
-					   endsAt: dateFormatter.date(from: self.endsAt)!
+					   startsAt: startsAtDate,
+					   endsAt: endsAtDate
 		)
 	}
 }
