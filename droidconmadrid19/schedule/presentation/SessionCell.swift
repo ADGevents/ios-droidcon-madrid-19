@@ -120,7 +120,7 @@ private extension SessionCell {
 
 	func bindSession(session: Session, isBookmarkingEnabled: Bool) {
 		timeView.text = session.startsAt.toDayAndHour()
-		timePeriodView.text = "AM"
+		timePeriodView.text = session.startsAt.toTimePeriod()
 		sessionTitleView.text = session.title
 		sessionDescriptionView.text = session.description
 

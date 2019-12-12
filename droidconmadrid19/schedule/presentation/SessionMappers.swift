@@ -16,4 +16,15 @@ extension Date {
 
 		return dateFormatter.string(from: self)
 	}
+
+	func toTimePeriod() -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.locale = Locale(identifier: "es_ES")
+		dateFormatter.dateFormat = "a"
+		dateFormatter.amSymbol = "AM"
+		dateFormatter.pmSymbol = "PM"
+
+		return dateFormatter.string(from: self)
+
+	}
 }
